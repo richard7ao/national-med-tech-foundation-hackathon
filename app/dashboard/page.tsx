@@ -18,7 +18,7 @@ export default function DashboardPage() {
           3
         </div>
         <span className="text-sm text-emerald-800">
-          <strong>3 items on your watch list are available nearby</strong> — Metformin 500mg highlighted
+          <strong>3 items on your watch list are available nearby</strong> — Paracetamol 500mg highlighted
         </span>
       </div>
 

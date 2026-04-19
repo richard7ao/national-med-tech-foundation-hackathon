@@ -27,13 +27,13 @@ Transition: "What if they could just... share?"
 **Screen**: PharmaBridge dashboard, logged in as "Greenfield Pharmacy, London SE15"
 
 **Narration**:
-> "Sarah at Greenfield Pharmacy just received a delivery, but she's overstocked on Metformin 500mg. It expires in 4 months. Under the current system, she'd watch it expire and incinerate it. With PharmaBridge, she scans the barcode."
+> "Sarah at Greenfield Pharmacy just received a delivery, but she's overstocked on Paracetamol 500mg. It expires in 4 months. Under the current system, she'd watch it expire and incinerate it. With PharmaBridge, she scans the barcode."
 
 **Actions** (show each step):
 1. Dashboard shows current listed surplus items (2-3 existing listings for realism)
 2. Click **"+ List Surplus"** button
 3. **Scan barcode** — camera/scanner UI activates, scans a mock FMD barcode
-4. System **auto-populates**: Medicine name (Metformin 500mg tablets), batch number, expiry date (Aug 2026), manufacturer, pack size (56 tablets), FMD verification status: Verified
+4. System **auto-populates**: Medicine name (Paracetamol 500mg tablets), batch number, expiry date (Aug 2026), manufacturer, pack size (56 tablets), FMD verification status: Verified
 5. Sarah enters: **Quantity** (5 packs), **Price** (40% below wholesale — system suggests a range)
 6. Click **"List"**
 7. Listing goes live — card appears with a green "Available" badge and a map pin showing her location
@@ -47,12 +47,12 @@ Transition: "What if they could just... share?"
 **Screen**: Switch to Park Lane Pharmacy's dashboard, 1.2 miles away
 
 **Narration**:
-> "Meanwhile, James at Park Lane Pharmacy has a patient waiting for Metformin but his wholesaler is out of stock until Thursday. He searches PharmaBridge."
+> "Meanwhile, James at Park Lane Pharmacy has a patient waiting for Paracetamol but his wholesaler is out of stock until Thursday. He searches PharmaBridge."
 
 **Actions**:
-1. Dashboard shows an **alert banner**: "3 items on your watch list are available nearby" — Metformin 500mg is highlighted
+1. Dashboard shows an **alert banner**: "3 items on your watch list are available nearby" — Paracetamol 500mg is highlighted
 2. Click into the **search/browse** view — a map shows nearby pharmacies with available surplus as pins
-3. **Metformin 500mg** listing from Greenfield appears: price, expiry, distance (1.2 miles), FMD verified, seller rating
+3. **Paracetamol 500mg** listing from Greenfield appears: price, expiry, distance (1.2 miles), FMD verified, seller rating
 4. Click **"Request"**
 5. Confirmation screen shows:
    - Item details
@@ -103,7 +103,7 @@ Transition: "What if they could just... share?"
    - CO2 avoided: 4,200 kg
    - Pharmacies active: 127
 2. **Map view**: Heatmap of surplus/shortage hotspots across a borough — red (shortage) and green (surplus) zones visible. Show connections (animated lines) between matched pharmacies
-3. **Trending shortages panel**: Top 5 medicines in short supply across the network — Metformin, Levothyroxine, HRT patches, Amoxicillin, Sertraline
+3. **Trending shortages panel**: Top 5 medicines in short supply across the network — Paracetamol, Loratadine, Vitamin D3, Ibuprofen, Cetirizine
 4. **Waste reduction trend**: Line chart showing month-over-month decline in medicines destroyed
 
 **Key detail to show**: This is commissioning-ready. An ICB can see exactly where waste is happening and where redistribution is working.

@@ -357,20 +357,20 @@ export interface Medicine {
 }
 
 export const medicines: Medicine[] = [
-  { id: "med-metformin", name: "Metformin", strength: "500mg", form: "tablets", packSize: 56, manufacturer: "AstraZeneca", wholesalePrice: 5.34 },
-  { id: "med-amoxicillin", name: "Amoxicillin", strength: "250mg", form: "capsules", packSize: 21, manufacturer: "Sandoz", wholesalePrice: 3.12 },
-  { id: "med-levothyroxine", name: "Levothyroxine", strength: "50mcg", form: "tablets", packSize: 28, manufacturer: "Mercury Pharma", wholesalePrice: 3.65 },
-  { id: "med-sertraline", name: "Sertraline", strength: "50mg", form: "tablets", packSize: 28, manufacturer: "Accord", wholesalePrice: 4.20 },
-  { id: "med-hrt-patches", name: "Evorel Conti", strength: "HRT", form: "patches", packSize: 8, manufacturer: "Theramex", wholesalePrice: 14.80 },
-  { id: "med-amlodipine", name: "Amlodipine", strength: "5mg", form: "tablets", packSize: 28, manufacturer: "Pfizer", wholesalePrice: 2.80 },
-  { id: "med-omeprazole", name: "Omeprazole", strength: "20mg", form: "capsules", packSize: 28, manufacturer: "Dexcel", wholesalePrice: 3.45 },
-  { id: "med-ramipril", name: "Ramipril", strength: "5mg", form: "capsules", packSize: 28, manufacturer: "Sanofi", wholesalePrice: 2.90 },
-  { id: "med-atorvastatin", name: "Atorvastatin", strength: "20mg", form: "tablets", packSize: 28, manufacturer: "Teva", wholesalePrice: 3.15 },
+  { id: "med-metformin", name: "Paracetamol", strength: "500mg", form: "tablets", packSize: 56, manufacturer: "AstraZeneca", wholesalePrice: 5.34 },
+  { id: "med-amoxicillin", name: "Ibuprofen", strength: "250mg", form: "capsules", packSize: 21, manufacturer: "Sandoz", wholesalePrice: 3.12 },
+  { id: "med-levothyroxine", name: "Loratadine", strength: "50mcg", form: "tablets", packSize: 28, manufacturer: "Mercury Pharma", wholesalePrice: 3.65 },
+  { id: "med-sertraline", name: "Cetirizine", strength: "50mg", form: "tablets", packSize: 28, manufacturer: "Accord", wholesalePrice: 4.20 },
+  { id: "med-hrt-patches", name: "Vitamin D3", strength: "HRT", form: "patches", packSize: 8, manufacturer: "Theramex", wholesalePrice: 14.80 },
+  { id: "med-amlodipine", name: "Aspirin", strength: "5mg", form: "tablets", packSize: 28, manufacturer: "Pfizer", wholesalePrice: 2.80 },
+  { id: "med-omeprazole", name: "Famotidine", strength: "20mg", form: "capsules", packSize: 28, manufacturer: "Dexcel", wholesalePrice: 3.45 },
+  { id: "med-ramipril", name: "Chlorphenamine", strength: "5mg", form: "capsules", packSize: 28, manufacturer: "Sanofi", wholesalePrice: 2.90 },
+  { id: "med-atorvastatin", name: "Senna", strength: "20mg", form: "tablets", packSize: 28, manufacturer: "Teva", wholesalePrice: 3.15 },
   { id: "med-salbutamol", name: "Salbutamol", strength: "100mcg", form: "inhaler", packSize: 1, manufacturer: "GlaxoSmithKline", wholesalePrice: 6.50 },
-  { id: "med-lansoprazole", name: "Lansoprazole", strength: "30mg", form: "capsules", packSize: 28, manufacturer: "Mylan", wholesalePrice: 4.10 },
-  { id: "med-bisoprolol", name: "Bisoprolol", strength: "2.5mg", form: "tablets", packSize: 28, manufacturer: "Accord", wholesalePrice: 2.35 },
-  { id: "med-doxycycline", name: "Doxycycline", strength: "100mg", form: "capsules", packSize: 8, manufacturer: "Actavis", wholesalePrice: 5.70 },
-  { id: "med-naproxen", name: "Naproxen", strength: "250mg", form: "tablets", packSize: 56, manufacturer: "Rosemont", wholesalePrice: 4.85 },
+  { id: "med-lansoprazole", name: "Mebeverine", strength: "30mg", form: "capsules", packSize: 28, manufacturer: "Mylan", wholesalePrice: 4.10 },
+  { id: "med-bisoprolol", name: "Folic Acid", strength: "2.5mg", form: "tablets", packSize: 28, manufacturer: "Accord", wholesalePrice: 2.35 },
+  { id: "med-doxycycline", name: "Loperamide", strength: "100mg", form: "capsules", packSize: 8, manufacturer: "Actavis", wholesalePrice: 5.70 },
+  { id: "med-naproxen", name: "Glucosamine", strength: "250mg", form: "tablets", packSize: 56, manufacturer: "Rosemont", wholesalePrice: 4.85 },
   { id: "med-cetirizine", name: "Cetirizine", strength: "10mg", form: "tablets", packSize: 30, manufacturer: "UCB Pharma", wholesalePrice: 3.95 },
 ];
 
@@ -779,11 +779,11 @@ export const networkStats: NetworkStats = {
   totalCO2Avoided: 4200,
   activePharmacies: 127,
   trendingShortages: [
-    { medicineId: "med-metformin", medicineName: "Metformin 500mg", severity: "critical" },
-    { medicineId: "med-levothyroxine", medicineName: "Levothyroxine 50mcg", severity: "high" },
-    { medicineId: "med-hrt-patches", medicineName: "HRT Patches", severity: "high" },
-    { medicineId: "med-amoxicillin", medicineName: "Amoxicillin 250mg", severity: "medium" },
-    { medicineId: "med-sertraline", medicineName: "Sertraline 50mg", severity: "medium" },
+    { medicineId: "med-metformin", medicineName: "Paracetamol 500mg", severity: "critical" },
+    { medicineId: "med-levothyroxine", medicineName: "Loratadine 50mcg", severity: "high" },
+    { medicineId: "med-hrt-patches", medicineName: "Vitamin D3", severity: "high" },
+    { medicineId: "med-amoxicillin", medicineName: "Ibuprofen 250mg", severity: "medium" },
+    { medicineId: "med-sertraline", medicineName: "Cetirizine 50mg", severity: "medium" },
   ],
   wasteReductionTrend: [
     { month: "Nov", value: 8200 },
@@ -825,10 +825,10 @@ export const networkStats: NetworkStats = {
       { month: "Apr", value: 142 },
     ],
     topMedicines: [
-      { medicineId: "med-metformin", name: "Metformin 500mg", count: 17 },
-      { medicineId: "med-amoxicillin", name: "Amoxicillin 250mg", count: 12 },
-      { medicineId: "med-levothyroxine", name: "Levothyroxine 50mcg", count: 9 },
-      { medicineId: "med-sertraline", name: "Sertraline 50mg", count: 7 },
+      { medicineId: "med-metformin", name: "Paracetamol 500mg", count: 17 },
+      { medicineId: "med-amoxicillin", name: "Ibuprofen 250mg", count: 12 },
+      { medicineId: "med-levothyroxine", name: "Loratadine 50mcg", count: 9 },
+      { medicineId: "med-sertraline", name: "Cetirizine 50mg", count: 7 },
     ],
   },
 };
@@ -1378,7 +1378,7 @@ export default function DashboardPage() {
           3
         </div>
         <span className="text-sm text-emerald-800">
-          <strong>3 items on your watch list are available nearby</strong> — Metformin 500mg highlighted
+          <strong>3 items on your watch list are available nearby</strong> — Paracetamol 500mg highlighted
         </span>
       </div>
 
@@ -1618,7 +1618,7 @@ import Badge from "../components/Badge";
 const STEPS = ["Scan", "Confirm", "List"];
 
 const MOCK_SCAN_RESULT = {
-  name: "Metformin 500mg Tablets",
+  name: "Paracetamol 500mg Tablets",
   batchNumber: "AZ20260112",
   expiryDate: "Aug 2026",
   manufacturer: "AstraZeneca",
@@ -2065,7 +2065,7 @@ export default function SearchPage() {
       <div className="bg-white rounded-lg px-4 py-3 mb-4 flex gap-3 items-center shadow-[0_1px_2px_rgba(0,0,0,0.05)]">
         <input
           type="text"
-          placeholder='Search medicines... e.g. "Metformin 500mg"'
+          placeholder='Search medicines... e.g. "Paracetamol 500mg"'
           className="flex-1 bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm text-slate-800 placeholder:text-slate-400 outline-none focus:border-emerald-400"
         />
         <select className="bg-slate-50 border border-slate-200 rounded-md px-3 py-2 text-xs text-slate-600">

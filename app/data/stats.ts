@@ -34,11 +34,11 @@ export const networkStats: NetworkStats = {
   totalCO2Avoided: 4200,
   activePharmacies: 127,
   trendingShortages: [
-    { medicineId: "med-metformin", medicineName: "Metformin 500mg", severity: "critical" },
-    { medicineId: "med-levothyroxine", medicineName: "Levothyroxine 50mcg", severity: "high" },
-    { medicineId: "med-hrt-patches", medicineName: "HRT Patches", severity: "high" },
-    { medicineId: "med-amoxicillin", medicineName: "Amoxicillin 250mg", severity: "medium" },
-    { medicineId: "med-sertraline", medicineName: "Sertraline 50mg", severity: "medium" },
+    { medicineId: "med-metformin", medicineName: "Paracetamol 500mg", severity: "critical" },
+    { medicineId: "med-levothyroxine", medicineName: "Loratadine 10mg", severity: "high" },
+    { medicineId: "med-hrt-patches", medicineName: "Vitamin D3 800IU", severity: "high" },
+    { medicineId: "med-amoxicillin", medicineName: "Ibuprofen 400mg", severity: "medium" },
+    { medicineId: "med-sertraline", medicineName: "Cetirizine 10mg", severity: "medium" },
   ],
   wasteReductionTrend: [
     { month: "Nov", value: 8200 },
@@ -80,10 +80,10 @@ export const networkStats: NetworkStats = {
       { month: "Apr", value: 142 },
     ],
     topMedicines: [
-      { medicineId: "med-metformin", name: "Metformin 500mg", count: 17 },
-      { medicineId: "med-amoxicillin", name: "Amoxicillin 250mg", count: 12 },
-      { medicineId: "med-levothyroxine", name: "Levothyroxine 50mcg", count: 9 },
-      { medicineId: "med-sertraline", name: "Sertraline 50mg", count: 7 },
+      { medicineId: "med-metformin", name: "Paracetamol 500mg", count: 17 },
+      { medicineId: "med-amoxicillin", name: "Ibuprofen 400mg", count: 12 },
+      { medicineId: "med-levothyroxine", name: "Loratadine 10mg", count: 9 },
+      { medicineId: "med-sertraline", name: "Cetirizine 10mg", count: 7 },
     ],
   },
 };

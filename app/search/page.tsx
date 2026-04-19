@@ -69,7 +69,7 @@ export default function SearchPage() {
       <div className="glass-card-static px-6 py-5 mb-5 flex gap-3 items-center">
         <input
           type="text"
-          placeholder='Search medicines... e.g. "Metformin 500mg"'
+          placeholder='Search medicines... e.g. "Paracetamol 500mg"'
           className="flex-1 bg-slate-50/80 border border-slate-200 rounded-xl px-4 py-2.5 text-sm text-slate-800 placeholder:text-slate-400 outline-none focus:border-emerald-400"
         />
         <select className="bg-slate-50/80 border border-slate-200 rounded-xl px-4 py-2.5 text-xs text-slate-600 outline-none focus:border-emerald-400">

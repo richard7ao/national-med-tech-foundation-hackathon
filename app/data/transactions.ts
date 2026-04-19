@@ -22,7 +22,7 @@ export interface Transaction {
 }
 
 export const transactions: Transaction[] = [
-  // txn-001: Metformin from Greenfield → Park Lane (primary demo transaction)
+  // txn-001: Paracetamol from Greenfield → Park Lane (primary demo transaction)
   {
     id: "txn-001",
     listingId: "lst-001",
@@ -88,7 +88,7 @@ export const transactions: Transaction[] = [
     ],
   },
 
-  // txn-002: Amoxicillin from Peckham → Greenfield (Greenfield buys)
+  // txn-002: Ibuprofen from Peckham → Greenfield (Greenfield buys)
   {
     id: "txn-002",
     listingId: "lst-027",
@@ -154,7 +154,7 @@ export const transactions: Transaction[] = [
     ],
   },
 
-  // txn-003: Levothyroxine from Camberwell → Greenfield (Greenfield buys)
+  // txn-003: Loratadine from Camberwell → Greenfield (Greenfield buys)
   {
     id: "txn-003",
     listingId: "lst-025",
@@ -178,14 +178,14 @@ export const transactions: Transaction[] = [
       {
         step: 2,
         title: "FMD Serialisation Verified",
-        description: "Serial: 01-05012345-034567-MP verified against EMVS. Temperature-sensitive product confirmed.",
+        description: "Serial: 01-05012345-034567-MP verified against EMVS. Product confirmed.",
         timestamp: "2026-02-01T07:30:00Z",
         type: "supply-chain",
       },
       {
         step: 3,
         title: "Listed by Camberwell Pharmacy",
-        description: "Dr. Fatima Olu (GPhC #2054321) listed 6 packs at £2.30/pack surplus thyroid medication.",
+        description: "Dr. Fatima Olu (GPhC #2054321) listed 6 packs at £2.30/pack surplus allergy medication.",
         timestamp: "2026-03-03T09:15:00Z",
         type: "platform",
       },
@@ -220,7 +220,7 @@ export const transactions: Transaction[] = [
     ],
   },
 
-  // txn-004: Sertraline from Greenfield → Dulwich (Greenfield sells)
+  // txn-004: Cetirizine from Greenfield → Dulwich (Greenfield sells)
   {
     id: "txn-004",
     listingId: "lst-004",
@@ -244,7 +244,7 @@ export const transactions: Transaction[] = [
       {
         step: 2,
         title: "FMD Serialisation Verified",
-        description: "Serial: 01-06543210-045678-AC verified against EMVS. Antidepressant product confirmed.",
+        description: "Serial: 01-06543210-045678-AC verified against EMVS. Antihistamine product confirmed.",
         timestamp: "2026-01-15T09:00:00Z",
         type: "supply-chain",
       },
@@ -286,7 +286,7 @@ export const transactions: Transaction[] = [
     ],
   },
 
-  // txn-005: Amlodipine from Greenfield → Lewisham (Greenfield sells)
+  // txn-005: Aspirin from Greenfield → Lewisham (Greenfield sells)
   {
     id: "txn-005",
     listingId: "lst-007",
@@ -352,7 +352,7 @@ export const transactions: Transaction[] = [
     ],
   },
 
-  // txn-006: HRT Patches from Camberwell → Brixton
+  // txn-006: Vitamin D3 from Camberwell → Brixton
   {
     id: "txn-006",
     listingId: "lst-013",
@@ -376,7 +376,7 @@ export const transactions: Transaction[] = [
       {
         step: 2,
         title: "FMD Serialisation Verified",
-        description: "Serial: 01-01234567-256789-TH verified against EMVS. Hormone therapy product confirmed.",
+        description: "Serial: 01-01234567-256789-TH verified against EMVS. Vitamin supplement product confirmed.",
         timestamp: "2026-01-20T09:30:00Z",
         type: "supply-chain",
       },
@@ -418,7 +418,7 @@ export const transactions: Transaction[] = [
     ],
   },
 
-  // txn-007: Ramipril from Greenfield → Rotherhithe (Greenfield sells)
+  // txn-007: Chlorphenamine from Greenfield → Rotherhithe (Greenfield sells)
   {
     id: "txn-007",
     listingId: "lst-006",
@@ -442,7 +442,7 @@ export const transactions: Transaction[] = [
       {
         step: 2,
         title: "FMD Serialisation Verified",
-        description: "Serial: 01-08765432-067890-SN verified against EMVS. ACE inhibitor confirmed.",
+        description: "Serial: 01-08765432-067890-SN verified against EMVS. Antihistamine product confirmed.",
         timestamp: "2026-03-10T08:30:00Z",
         type: "supply-chain",
       },
@@ -484,7 +484,7 @@ export const transactions: Transaction[] = [
     ],
   },
 
-  // txn-008: Omeprazole from Greenfield → Walworth (Greenfield sells)
+  // txn-008: Famotidine from Greenfield → Walworth (Greenfield sells)
   {
     id: "txn-008",
     listingId: "lst-005",
@@ -508,7 +508,7 @@ export const transactions: Transaction[] = [
       {
         step: 2,
         title: "FMD Serialisation Verified",
-        description: "Serial: 01-07654321-056789-DX verified against EMVS. Proton pump inhibitor confirmed.",
+        description: "Serial: 01-07654321-056789-DX verified against EMVS. Antacid product confirmed.",
         timestamp: "2026-02-20T08:00:00Z",
         type: "supply-chain",
       },
@@ -550,7 +550,7 @@ export const transactions: Transaction[] = [
     ],
   },
 
-  // txn-009: Atorvastatin from Dulwich → Elephant
+  // txn-009: Senna from Dulwich → Elephant
   {
     id: "txn-009",
     listingId: "lst-026",
@@ -574,7 +574,7 @@ export const transactions: Transaction[] = [
       {
         step: 2,
         title: "FMD Serialisation Verified",
-        description: "Serial: 01-03456789-723456-TV verified against EMVS. Statin product confirmed.",
+        description: "Serial: 01-03456789-723456-TV verified against EMVS. Laxative product confirmed.",
         timestamp: "2026-02-18T08:45:00Z",
         type: "supply-chain",
       },
@@ -616,7 +616,7 @@ export const transactions: Transaction[] = [
     ],
   },
 
-  // txn-010: Salbutamol from Deptford → Catford
+  // txn-010: Salbutamol from Deptford → Catford (inhaler)
   {
     id: "txn-010",
     listingId: "lst-015",
@@ -640,7 +640,7 @@ export const transactions: Transaction[] = [
       {
         step: 2,
         title: "FMD Serialisation Verified",
-        description: "Serial: 01-07890123-367890-GS verified against EMVS. MDI product confirmed, propellant checked.",
+        description: "Serial: 01-07890123-367890-GS verified against EMVS. Inhaler product confirmed, propellant checked.",
         timestamp: "2026-03-10T07:30:00Z",
         type: "supply-chain",
       },

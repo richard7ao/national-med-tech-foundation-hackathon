@@ -144,7 +144,7 @@ app/
 - 4 quick stat cards in a row: Active Listings (7), Completed Sales (12), Revenue Recovered (£1,240), Expiring Soon (2)
 - Surplus listings table:
   - Columns: Medicine (name + pack info), Qty, Expiry, Price, Status
-  - 4 rows of mock data (Metformin, Amoxicillin, Levothyroxine, Sertraline)
+  - 4 rows of mock data (Paracetamol, Ibuprofen, Loratadine, Cetirizine)
   - Status badges: Available (green), 1 Request (amber), Matched (teal)
   - FMD verified shield icon on each row
   - Header with "+ List Surplus" button (links to `/list-surplus`)
@@ -171,7 +171,7 @@ app/
 **Interaction flow**:
 1. Initial state: Scanner visible, form area shows placeholder "Scan a barcode to begin"
 2. Click "Scan Barcode" → scanning line animates for 1.5s → step indicator advances to step 2
-3. Form auto-populates with Metformin 500mg mock data → FMD Verified flash
+3. Form auto-populates with Paracetamol 500mg mock data → FMD Verified flash
 4. User sees pre-filled quantity (5) and price (£3.20)
 5. Click "List Medicine" → step indicator advances to step 3 → success state with checkmark → auto-redirect to dashboard after 2s
 
@@ -188,7 +188,7 @@ app/
     - Green pins for nearby pharmacies with listing count badges
     - Clicking a pin highlights the corresponding result card
   - **Right (50%)**: Results list
-    - Count label: "Showing 4 pharmacies with Metformin 500mg within 5 miles"
+    - Count label: "Showing 4 pharmacies with Paracetamol 500mg within 5 miles"
     - Result cards with: pharmacy name, distance, star rating, medicine name + quantity, FMD Verified badge, expiry, price, wholesale savings %, "Request" button
 
 **Request flow** (triggered by clicking "Request"):
@@ -232,7 +232,7 @@ app/
   - Revenue Recovered: £1,240, +18% indicator, Recharts area chart (emerald)
   - Waste Avoided: 47 packs, +12% indicator, Recharts bar chart (emerald bars)
 - Bottom row (2 columns):
-  - Top Traded Medicines: ranked list with horizontal progress bars (Metformin, Amoxicillin, Levothyroxine, Sertraline)
+  - Top Traded Medicines: ranked list with horizontal progress bars (Paracetamol, Ibuprofen, Loratadine, Cetirizine)
   - CO₂ Avoided This Month: 142 kg, Recharts line chart (green)
 
 ### Impact Dashboard — `/impact`
@@ -251,7 +251,7 @@ app/
     - Pharmacy cluster icons with count badges (e.g., hospital emoji + "12" showing 12 active pharmacies in an area)
     - Clusters represent groups of pharmacies per neighbourhood
   - **Right** (stacked):
-    - Trending Shortages panel: top 5 medicines with severity badges (Critical/High/Medium) — Metformin, Levothyroxine, HRT Patches, Amoxicillin, Sertraline
+    - Trending Shortages panel: top 5 medicines with severity badges (Critical/High/Medium) — Paracetamol, Loratadine, Vitamin D3, Ibuprofen, Cetirizine
     - Waste Reduction Trend: Recharts line chart showing month-over-month decline (Nov → Apr), "↓ 34% month-over-month decline" label
 
 ## Mock Data Schema
@@ -284,7 +284,7 @@ interface Medicine {
   wholesalePrice: number; // per pack
 }
 ```
-Approximately 15 unique medicines including: Metformin 500mg, Amoxicillin 250mg, Levothyroxine 50mcg, Sertraline 50mg, HRT Patches, Amlodipine 5mg, Omeprazole 20mg, Ramipril 5mg, Atorvastatin 20mg, Salbutamol inhaler, Lansoprazole 30mg, Bisoprolol 2.5mg, Doxycycline 100mg, Naproxen 250mg, Cetirizine 10mg.
+Approximately 15 unique medicines including: Paracetamol 500mg, Ibuprofen 250mg, Loratadine 50mcg, Cetirizine 50mg, Vitamin D3, Aspirin 5mg, Famotidine 20mg, Chlorphenamine 5mg, Senna 20mg, Salbutamol inhaler, Mebeverine 30mg, Folic Acid 2.5mg, Loperamide 100mg, Glucosamine 250mg, Acrivastine 8mg.
 
 ### listings.ts
 ```typescript
@@ -302,7 +302,7 @@ interface Listing {
   listedAt: string; // ISO datetime
 }
 ```
-Approximately 50 listings spread across the 20 pharmacies. Greenfield has 7 active listings. Ensure Metformin 500mg listings exist at multiple pharmacies for the search demo.
+Approximately 50 listings spread across the 20 pharmacies. Greenfield has 7 active listings. Ensure Paracetamol 500mg listings exist at multiple pharmacies for the search demo.
 
 ### transactions.ts
 ```typescript
@@ -329,7 +329,7 @@ interface AuditEvent {
   type: 'supply-chain' | 'platform'; // green vs teal dot
 }
 ```
-10 completed transactions. The primary one is Metformin 500mg from Greenfield → Park Lane with £32.40 savings and full 7-step audit trail.
+10 completed transactions. The primary one is Paracetamol 500mg from Greenfield → Park Lane with £32.40 savings and full 7-step audit trail.
 
 ### stats.ts
 ```typescript

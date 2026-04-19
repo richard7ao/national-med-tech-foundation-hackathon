@@ -106,7 +106,7 @@ export const listings: Listing[] = [
     listedAt: "2026-04-07T11:30:00Z",
   },
 
-  // Peckham Health Pharmacy (ph-peckham) — Metformin + others
+  // Peckham Health Pharmacy (ph-peckham) — Paracetamol + others
   {
     id: "lst-008",
     pharmacyId: "ph-peckham",
@@ -147,7 +147,7 @@ export const listings: Listing[] = [
     listedAt: "2026-04-03T09:00:00Z",
   },
 
-  // Camberwell Pharmacy (ph-camberwell) — Metformin + others
+  // Camberwell Pharmacy (ph-camberwell) — Paracetamol + others
   {
     id: "lst-011",
     pharmacyId: "ph-camberwell",
@@ -188,7 +188,7 @@ export const listings: Listing[] = [
     listedAt: "2026-04-04T14:00:00Z",
   },
 
-  // Deptford Pharmacy (ph-deptford) — Metformin + others
+  // Deptford Pharmacy (ph-deptford) — Paracetamol + others
   {
     id: "lst-014",
     pharmacyId: "ph-deptford",
@@ -229,7 +229,7 @@ export const listings: Listing[] = [
     listedAt: "2026-04-07T11:00:00Z",
   },
 
-  // Walworth Pharmacy (ph-walworth) — Metformin + others
+  // Walworth Pharmacy (ph-walworth) — Paracetamol + others
   {
     id: "lst-017",
     pharmacyId: "ph-walworth",
@@ -270,7 +270,7 @@ export const listings: Listing[] = [
     listedAt: "2026-04-04T11:30:00Z",
   },
 
-  // Elephant Pharmacy (ph-elephant) — Metformin + others
+  // Elephant Pharmacy (ph-elephant) — Paracetamol + others
   {
     id: "lst-020",
     pharmacyId: "ph-elephant",
