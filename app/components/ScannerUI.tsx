@@ -19,7 +19,7 @@ export default function ScannerUI({ onScanComplete }: ScannerUIProps) {
 
   return (
     <div>
-      <div className="bg-slate-900 rounded-xl overflow-hidden relative flex items-center justify-center" style={{ aspectRatio: "4/3" }}>
+      <div className="bg-slate-900 rounded-2xl overflow-hidden relative flex items-center justify-center shadow-[0_2px_12px_rgba(0,0,0,0.12)]" style={{ aspectRatio: "4/3" }}>
         {/* Viewfinder */}
         <div className="w-[60%] h-[60%] border-2 border-white/40 rounded-lg relative">
           {/* Corner brackets */}
@@ -52,7 +52,7 @@ export default function ScannerUI({ onScanComplete }: ScannerUIProps) {
         </div>
 
         {/* Label */}
-        <div className="absolute bottom-3 left-0 right-0 text-center text-white/50 text-[11px]">
+        <div className="absolute bottom-4 left-0 right-0 text-center text-white/50 text-[11px]">
           Position FMD barcode within frame
         </div>
       </div>
@@ -60,7 +60,7 @@ export default function ScannerUI({ onScanComplete }: ScannerUIProps) {
       <button
         onClick={handleScan}
         disabled={scanning}
-        className="w-full mt-3 bg-emerald-400 hover:bg-emerald-500 disabled:bg-emerald-300 text-white py-3 rounded-lg text-sm font-semibold transition-colors"
+        className="w-full mt-4 bg-emerald-500 hover:bg-emerald-600 disabled:bg-emerald-300 text-white py-3.5 rounded-xl text-sm font-semibold transition-colors shadow-sm"
       >
         {scanning ? "Scanning..." : "Scan Barcode"}
       </button>

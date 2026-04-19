@@ -4,26 +4,26 @@ import StatCard from "./components/StatCard";
 
 export default function LandingPage() {
   return (
-    <div className="-m-6">
+    <div className="-m-8">
       {/* Hero */}
       <div
-        className="px-10 py-12 text-center"
+        className="px-16 py-20 text-center"
         style={{ background: "linear-gradient(135deg, #d1fae5, #a7f3d0, #99f6e4)" }}
       >
-        <div className="text-xs uppercase tracking-[2px] text-emerald-700/60 mb-2">
+        <div className="text-[11px] uppercase tracking-[3px] text-emerald-700/50 mb-3 font-medium">
           The Problem
         </div>
-        <h1 className="text-3xl font-extrabold text-emerald-900 mb-3">
+        <h1 className="text-4xl font-extrabold text-emerald-900 mb-4 tracking-tight">
           Stop Burning Good Medicine
         </h1>
-        <p className="text-sm text-emerald-800/70 max-w-lg mx-auto">
+        <p className="text-base text-emerald-800/60 max-w-xl mx-auto leading-relaxed">
           One pharmacy incinerates stock while another turns patients away.
           What if they could just... share?
         </p>
       </div>
 
       {/* Stat Cards */}
-      <div className="grid grid-cols-3 gap-5 px-10 py-8">
+      <div className="grid grid-cols-3 gap-6 px-16 -mt-8 relative z-10">
         <StatCard
           label="Medicines Destroyed / Year"
           value={110}
@@ -52,7 +52,7 @@ export default function LandingPage() {
 
       {/* Transition */}
       <div
-        className="text-center pb-10 text-slate-500 italic text-[15px] animate-fade-in-up"
+        className="text-center py-16 text-slate-400 italic text-base animate-fade-in-up"
         style={{ animationDelay: "800ms" }}
       >
         &ldquo;What if they could just... share?&rdquo;

@@ -34,17 +34,17 @@ export default function StatCard({
 
   return (
     <div
-      className={`bg-white rounded-xl p-6 shadow-[0_1px_3px_rgba(0,0,0,0.08)] border-l-4 ${styles.border} animate-fade-in-up`}
+      className={`bg-white rounded-2xl p-7 shadow-[0_2px_12px_rgba(0,0,0,0.06)] border border-slate-100 border-l-4 ${styles.border} animate-fade-in-up`}
       style={{ animationDelay: `${delay}ms` }}
     >
-      <div className="text-[11px] uppercase tracking-wider text-slate-400 mb-2">
+      <div className="text-[10px] uppercase tracking-[1.5px] text-slate-400 mb-3 font-medium">
         {label}
       </div>
-      <div className={`text-3xl font-extrabold ${styles.text}`}>
+      <div className={`text-3xl font-extrabold ${styles.text} mb-1`}>
         <AnimatedCounter target={value} prefix={prefix} suffix={suffix} />
       </div>
       {subtitle && (
-        <div className="text-xs text-slate-400 mt-1">{subtitle}</div>
+        <div className="text-[13px] text-slate-400 mt-2">{subtitle}</div>
       )}
     </div>
   );
