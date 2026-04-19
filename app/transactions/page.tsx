@@ -13,13 +13,13 @@ export default function TransactionsPage() {
   const selected = myTransactions.find((t) => t.id === selectedId);
 
   return (
-    <div className="grid gap-5" style={{ gridTemplateColumns: "280px 1fr", height: "calc(100vh - 120px)" }}>
+    <div className="grid gap-6" style={{ gridTemplateColumns: "300px 1fr", height: "calc(100vh - 120px)" }}>
       {/* Left: Transaction List */}
       <div className="overflow-y-auto">
-        <div className="text-xs text-slate-400 font-semibold uppercase tracking-wide mb-3">
+        <div className="text-xs text-slate-400 font-semibold uppercase tracking-wide mb-4">
           Recent Transactions
         </div>
-        <div className="flex flex-col gap-1.5">
+        <div className="flex flex-col gap-2">
           {myTransactions.map((txn) => {
             const med = getMedicineById(txn.medicineId);
             const isSeller = txn.sellerPharmacyId === CURRENT_PHARMACY_ID;
@@ -31,7 +31,7 @@ export default function TransactionsPage() {
               <button
                 key={txn.id}
                 onClick={() => setSelectedId(txn.id)}
-                className={`text-left rounded-lg p-3 transition-colors ${
+                className={`text-left rounded-xl p-4 transition-colors ${
                   isActive
                     ? "bg-emerald-500 text-white"
                     : "bg-white border border-slate-200 hover:border-emerald-300"
@@ -59,8 +59,8 @@ export default function TransactionsPage() {
 
       {/* Right: Audit Trail */}
       {selected && (
-        <div className="bg-white rounded-xl p-6 shadow-[0_1px_3px_rgba(0,0,0,0.08)] overflow-y-auto">
-          <div className="flex justify-between items-start mb-5">
+        <div className="bg-white rounded-2xl p-7 shadow-[0_2px_12px_rgba(0,0,0,0.06)] border border-slate-100 overflow-y-auto">
+          <div className="flex justify-between items-start mb-6">
             <div>
               <h2 className="text-lg font-bold text-slate-800">
                 {getMedicineById(selected.medicineId)

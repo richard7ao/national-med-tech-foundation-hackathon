@@ -66,7 +66,7 @@ export default function SearchPage() {
   return (
     <div>
       {/* Search Bar */}
-      <div className="bg-white rounded-lg px-4 py-3 mb-4 flex gap-3 items-center shadow-[0_1px_2px_rgba(0,0,0,0.05)]">
+      <div className="bg-white rounded-xl px-5 py-4 mb-5 flex gap-3 items-center shadow-[0_2px_12px_rgba(0,0,0,0.06)] border border-slate-100">
         <input
           type="text"
           placeholder='Search medicines... e.g. "Metformin 500mg"'
@@ -85,9 +85,9 @@ export default function SearchPage() {
       </div>
 
       {/* Split: Map + Results */}
-      <div className="grid grid-cols-2 gap-4" style={{ height: "calc(100vh - 200px)" }}>
+      <div className="grid grid-cols-2 gap-5" style={{ height: "calc(100vh - 200px)" }}>
         {/* Map */}
-        <div className="rounded-lg overflow-hidden">
+        <div className="rounded-xl overflow-hidden">
           <PharmacyMap
             markers={markers}
             onMarkerClick={(id) => setHighlightPharmacy(id)}
@@ -96,11 +96,11 @@ export default function SearchPage() {
 
         {/* Results */}
         <div className="overflow-y-auto pr-1">
-          <div className="text-xs text-slate-400 mb-3">
+          <div className="text-xs text-slate-400 mb-4">
             Showing <strong className="text-slate-600">{availableListings.length} listings</strong> from nearby pharmacies
           </div>
 
-          <div className="flex flex-col gap-2.5">
+          <div className="flex flex-col gap-3">
             {availableListings.map(({ listing, pharmacy, medicine, distanceMiles }) => {
               const savingsPercent = Math.round(((medicine.wholesalePrice - listing.pricePerPack) / medicine.wholesalePrice) * 100);
               const isHighlighted = highlightPharmacy === pharmacy.id;
@@ -108,7 +108,7 @@ export default function SearchPage() {
               return (
                 <div
                   key={listing.id}
-                  className={`bg-white border rounded-lg p-3.5 transition-colors ${
+                  className={`bg-white border rounded-xl p-4 transition-colors ${
                     isHighlighted ? "border-emerald-400 shadow-md" : "border-slate-200"
                   }`}
                 >
