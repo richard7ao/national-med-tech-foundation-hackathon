@@ -108,14 +108,14 @@ export default function SearchPage() {
               return (
                 <div
                   key={listing.id}
-                  className={`bg-white border rounded-xl p-4 transition-colors ${
-                    isHighlighted ? "border-emerald-400 shadow-md" : "border-slate-200"
+                  className={`bg-white border rounded-xl p-5 transition-colors ${
+                    isHighlighted ? "border-emerald-400 shadow-md" : "border-slate-100 shadow-[0_2px_12px_rgba(0,0,0,0.06)]"
                   }`}
                 >
-                  <div className="flex justify-between items-start mb-2">
+                  <div className="flex justify-between items-start mb-3">
                     <div>
                       <div className="font-semibold text-sm text-slate-800">{pharmacy.name}</div>
-                      <div className="text-[11px] text-slate-400">
+                      <div className="text-[11px] text-slate-400 mt-0.5">
                         {pharmacy.postcode} · {distanceMiles.toFixed(1)} miles
                       </div>
                     </div>
@@ -130,7 +130,7 @@ export default function SearchPage() {
                       <div className="text-sm font-medium text-slate-700">
                         {formatMedicineName(medicine)} · {listing.quantity} packs
                       </div>
-                      <div className="flex gap-1.5 mt-1">
+                      <div className="flex gap-1.5 mt-1.5">
                         <Badge variant="verified" />
                         <span className="text-[11px] text-slate-400">
                           Exp: {new Date(listing.expiryDate).toLocaleDateString("en-GB", { month: "short", year: "numeric" })}
@@ -145,7 +145,7 @@ export default function SearchPage() {
 
                   <button
                     onClick={() => setSelectedListing(listing.id)}
-                    className="w-full mt-2.5 bg-emerald-400 hover:bg-emerald-500 text-white py-2 rounded-md text-xs font-semibold transition-colors"
+                    className="w-full mt-3.5 bg-emerald-500 hover:bg-emerald-600 text-white py-2.5 rounded-xl text-xs font-semibold transition-colors shadow-sm"
                   >
                     Request
                   </button>

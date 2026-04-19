@@ -31,19 +31,19 @@ export default function TransactionsPage() {
               <button
                 key={txn.id}
                 onClick={() => setSelectedId(txn.id)}
-                className={`text-left rounded-xl p-4 transition-colors ${
+                className={`text-left rounded-xl p-5 transition-colors ${
                   isActive
-                    ? "bg-emerald-500 text-white"
-                    : "bg-white border border-slate-200 hover:border-emerald-300"
+                    ? "bg-emerald-500 text-white shadow-md"
+                    : "bg-white border border-slate-100 shadow-[0_2px_12px_rgba(0,0,0,0.06)] hover:border-emerald-300"
                 }`}
               >
                 <div className={`font-semibold text-sm ${isActive ? "" : "text-slate-800"}`}>
                   {med ? formatMedicineName(med) : "Unknown"}
                 </div>
-                <div className={`text-[11px] ${isActive ? "opacity-80" : "text-slate-400"}`}>
+                <div className={`text-[11px] mt-1 ${isActive ? "opacity-80" : "text-slate-400"}`}>
                   {isSeller ? "→" : "←"} {counterparty?.name ?? "Unknown"} · {txn.quantity} packs
                 </div>
-                <div className={`text-[10px] mt-1 ${isActive ? "opacity-60" : "text-slate-300"}`}>
+                <div className={`text-[10px] mt-1.5 ${isActive ? "opacity-60" : "text-slate-300"}`}>
                   {new Date(txn.createdAt).toLocaleDateString("en-GB", {
                     day: "numeric",
                     month: "short",
