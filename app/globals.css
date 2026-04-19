@@ -1,63 +1,43 @@
-/* ============================================================
-   DESIGN TOKENS — Light mode only
-   ============================================================ */
-:root {
-  /* Backgrounds */
-  --bg-page:        #f4f4f8;
-  --bg-surface:     #ffffff;
-  --bg-sidebar:     #ffffff;
-  --bg-hover:       #f0f0f8;
-  --bg-active:      #eef2ff;
+@import "tailwindcss";
 
-  /* Borders */
-  --border:         #e6e6ee;
+@theme {
+  --font-dm-sans: "DM Sans", system-ui, -apple-system, sans-serif;
 
-  /* Text */
-  --text-primary:   #1a1a2e;
-  --text-secondary: #7070a0;
-  --text-muted:     #b0b0c4;
+  --color-primary: #34d399;
+  --color-primary-dark: #059669;
+  --color-primary-text: #064e3b;
+  --color-accent: #67e8f9;
+  --color-surface-green: #f0fdf4;
+  --color-surface-emerald: #d1fae5;
 
-  /* Accent */
-  --accent:         #3730a3;
-  --accent-subtle:  #eef2ff;
-  --accent-text:    #3730a3;
-
-  /* Shadows */
-  --shadow-sm:      0 1px 3px rgba(0,0,0,0.08);
-
-  /* Layout */
-  --sidebar-w:      224px;
-  --topbar-h:       46px;
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-card-lg: 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
-*, *::before, *::after {
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 body {
-  font-family: var(--font-dm-sans), 'DM Sans', system-ui, -apple-system, sans-serif;
-  background: var(--bg-page);
-  color: var(--text-primary);
+  font-family: var(--font-dm-sans);
+  background: var(--color-surface-green);
+  color: #1e293b;
 }
 
-/* ============================================================
-   APP SHELL LAYOUT
-   ============================================================ */
+/* App Shell Layout */
 .app-shell {
   display: flex;
   height: 100vh;
-  background: var(--bg-page);
-  color: var(--text-primary);
 }
 
 .app-sidebar {
-  width: var(--sidebar-w);
+  width: 224px;
   flex-shrink: 0;
   height: 100vh;
-  background: var(--bg-sidebar);
-  border-right: 1px solid var(--border);
+  background: white;
+  border-right: 1px solid #e2e8f0;
   display: flex;
   flex-direction: column;
   position: fixed;
@@ -68,30 +48,25 @@ body {
 }
 
 .app-main {
-  margin-left: var(--sidebar-w);
+  margin-left: 224px;
   flex: 1;
   display: flex;
   flex-direction: column;
-  overflow-y: auto;
+  min-height: 100vh;
 }
 
 .app-topbar {
-  height: var(--topbar-h);
-  background: var(--bg-surface);
-  border-bottom: 1px solid var(--border);
-  box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+  height: 46px;
+  background: white;
+  border-bottom: 1px solid #e2e8f0;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 0 24px;
   position: sticky;
   top: 0;
   z-index: 40;
-}
-
-.topbar-title {
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--text-primary);
 }
 
 .app-content {
@@ -100,38 +75,17 @@ body {
   padding: 24px;
 }
 
-/* ============================================================
-   SIDEBAR INTERNALS
-   ============================================================ */
+/* Sidebar */
 .sidebar-logo {
   display: flex;
   align-items: center;
   gap: 10px;
   padding: 20px 16px 16px;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid #e2e8f0;
   font-weight: 700;
   font-size: 15px;
-  color: var(--text-primary);
+  color: #064e3b;
   text-decoration: none;
-}
-
-.sidebar-logo-mark {
-  width: 28px;
-  height: 28px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.sidebar-logo-name {
-  font-weight: 700;
-  font-size: 15px;
-}
-
-.sidebar-logo-name sup {
-  font-weight: 400;
-  font-size: 11px;
-  vertical-align: super;
 }
 
 .sidebar-nav {
@@ -148,34 +102,77 @@ body {
   border-radius: 6px;
   font-size: 13.5px;
   font-weight: 500;
-  color: var(--text-secondary);
+  color: #94a3b8;
   text-decoration: none;
   transition: background 0.12s, color 0.12s;
   cursor: pointer;
 }
 
 .sidebar-item:hover {
-  background: var(--bg-hover);
-  color: var(--text-primary);
+  background: #f0fdf4;
+  color: #1e293b;
 }
 
 .sidebar-item.active {
-  background: var(--bg-active);
-  color: var(--accent-text);
+  background: #d1fae5;
+  color: #059669;
   font-weight: 600;
-  border-left: 3px solid var(--accent);
+  border-left: 3px solid #34d399;
   padding-left: 7px;
   border-radius: 0 6px 6px 0;
 }
 
-.sidebar-item-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: transparent;
+.sidebar-item-icon {
+  width: 18px;
+  height: 18px;
   flex-shrink: 0;
+  opacity: 0.6;
 }
 
-.sidebar-item.active .sidebar-item-dot {
-  background: var(--accent);
+.sidebar-item.active .sidebar-item-icon {
+  opacity: 1;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scanLine {
+  0% { top: 10%; }
+  50% { top: 85%; }
+  100% { top: 10%; }
+}
+
+@keyframes badgePulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.5s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-scan-line {
+  animation: scanLine 1.5s ease-in-out;
+}
+
+.animate-badge-pulse {
+  animation: badgePulse 0.6s ease-in-out;
+}
+
+/* Leaflet overrides */
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+  border-radius: 8px;
 }
