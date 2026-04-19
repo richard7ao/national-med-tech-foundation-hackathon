@@ -371,7 +371,7 @@ export const medicines: Medicine[] = [
   { id: "med-bisoprolol", name: "Bisoprolol", strength: "2.5mg", form: "tablets", packSize: 28, manufacturer: "Accord", wholesalePrice: 2.35 },
   { id: "med-doxycycline", name: "Doxycycline", strength: "100mg", form: "capsules", packSize: 8, manufacturer: "Actavis", wholesalePrice: 5.70 },
   { id: "med-naproxen", name: "Naproxen", strength: "250mg", form: "tablets", packSize: 56, manufacturer: "Rosemont", wholesalePrice: 4.85 },
-  { id: "med-codeine", name: "Codeine Phosphate", strength: "30mg", form: "tablets", packSize: 28, manufacturer: "Zentiva", wholesalePrice: 3.95 },
+  { id: "med-cetirizine", name: "Cetirizine", strength: "10mg", form: "tablets", packSize: 30, manufacturer: "UCB Pharma", wholesalePrice: 3.95 },
 ];
 
 export function getMedicineById(id: string): Medicine | undefined {
@@ -429,7 +429,7 @@ export const listings: Listing[] = [
 
   // Bermondsey Pharmacy
   { id: "lst-040", pharmacyId: "ph-bermondsey", medicineId: "med-amoxicillin", quantity: 6, pricePerPack: 1.90, batchNumber: "SZ20260312", expiryDate: "2026-07-15", fmdVerified: true, fmdSerial: "01-08714789-412345-SZ", status: "available", listedAt: "2026-04-18T15:00:00Z" },
-  { id: "lst-041", pharmacyId: "ph-bermondsey", medicineId: "med-codeine", quantity: 3, pricePerPack: 2.35, batchNumber: "ZV20260301", expiryDate: "2026-08-28", fmdVerified: true, fmdSerial: "01-08714789-423456-ZV", status: "available", listedAt: "2026-04-17T10:00:00Z" },
+  { id: "lst-041", pharmacyId: "ph-bermondsey", medicineId: "med-cetirizine", quantity: 3, pricePerPack: 2.35, batchNumber: "UB20260301", expiryDate: "2026-08-28", fmdVerified: true, fmdSerial: "01-08714789-423456-UB", status: "available", listedAt: "2026-04-17T10:00:00Z" },
 
   // Park Lane Pharmacy
   { id: "lst-050", pharmacyId: "ph-parklane", medicineId: "med-omeprazole", quantity: 9, pricePerPack: 2.10, batchNumber: "DX20260228", expiryDate: "2026-10-10", fmdVerified: true, fmdSerial: "01-08714789-512345-DX", status: "available", listedAt: "2026-04-19T10:00:00Z" },
@@ -465,7 +465,7 @@ export const listings: Listing[] = [
 
   // Brockley Pharmacy
   { id: "lst-130", pharmacyId: "ph-brockley", medicineId: "med-doxycycline", quantity: 3, pricePerPack: 3.35, batchNumber: "AT20260305", expiryDate: "2026-07-20", fmdVerified: true, fmdSerial: "01-08714789-D12345-AT", status: "available", listedAt: "2026-04-17T16:30:00Z" },
-  { id: "lst-131", pharmacyId: "ph-brockley", medicineId: "med-codeine", quantity: 2, pricePerPack: 2.30, batchNumber: "ZV20260310", expiryDate: "2026-09-12", fmdVerified: true, fmdSerial: "01-08714789-D23456-ZV", status: "available", listedAt: "2026-04-16T14:00:00Z" },
+  { id: "lst-131", pharmacyId: "ph-brockley", medicineId: "med-cetirizine", quantity: 2, pricePerPack: 2.30, batchNumber: "UB20260310", expiryDate: "2026-09-12", fmdVerified: true, fmdSerial: "01-08714789-D23456-UB", status: "available", listedAt: "2026-04-16T14:00:00Z" },
 
   // Catford, Forest Hill, Rotherhithe, Sydenham, Crystal Palace, Elephant — 1-2 each
   { id: "lst-140", pharmacyId: "ph-catford", medicineId: "med-amlodipine", quantity: 8, pricePerPack: 1.55, batchNumber: "PF20260215", expiryDate: "2026-12-15", fmdVerified: true, fmdSerial: "01-08714789-E12345-PF", status: "available", listedAt: "2026-04-18T11:00:00Z" },

@@ -284,7 +284,7 @@ interface Medicine {
   wholesalePrice: number; // per pack
 }
 ```
-Approximately 15 unique medicines including: Metformin 500mg, Amoxicillin 250mg, Levothyroxine 50mcg, Sertraline 50mg, HRT Patches, Amlodipine 5mg, Omeprazole 20mg, Ramipril 5mg, Atorvastatin 20mg, Salbutamol inhaler, Lansoprazole 30mg, Bisoprolol 2.5mg, Doxycycline 100mg, Naproxen 250mg, Codeine 30mg.
+Approximately 15 unique medicines including: Metformin 500mg, Amoxicillin 250mg, Levothyroxine 50mcg, Sertraline 50mg, HRT Patches, Amlodipine 5mg, Omeprazole 20mg, Ramipril 5mg, Atorvastatin 20mg, Salbutamol inhaler, Lansoprazole 30mg, Bisoprolol 2.5mg, Doxycycline 100mg, Naproxen 250mg, Cetirizine 10mg.
 
 ### listings.ts
 ```typescript
