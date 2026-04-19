@@ -15,18 +15,23 @@ export default function AnalyticsPage() {
 
   return (
     <div className="space-y-7">
-      {/* Period Selector */}
-      <div className="flex justify-between items-center mb-7">
-        <h2 className="text-lg font-bold text-slate-800">Your Performance</h2>
-        <div className="flex gap-1 bg-slate-100 rounded-md p-0.5">
+      {/* Header + Period Selector */}
+      <div className="flex justify-between items-center">
+        <h2
+          className="text-xl font-bold text-slate-800"
+          style={{ fontFamily: "var(--font-outfit)" }}
+        >
+          Your Performance
+        </h2>
+        <div className="flex gap-1 bg-white/60 backdrop-blur rounded-xl p-1">
           {PERIODS.map((p) => (
             <button
               key={p}
               onClick={() => setPeriod(p)}
-              className={`px-4 py-1.5 rounded text-xs transition-colors ${
+              className={`px-4 py-1.5 text-xs transition-colors ${
                 p === period
-                  ? "bg-white text-slate-800 font-semibold shadow-sm"
-                  : "text-slate-400"
+                  ? "bg-white text-slate-800 font-semibold shadow-sm rounded-lg"
+                  : "text-slate-400 hover:text-slate-600"
               }`}
             >
               {p}
@@ -36,10 +41,19 @@ export default function AnalyticsPage() {
       </div>
 
       {/* Top Row: Revenue + Waste */}
-      <div className="grid grid-cols-2 gap-6 mb-6">
-        <div className="bg-white rounded-2xl p-6 shadow-[0_2px_12px_rgba(0,0,0,0.06)] border border-slate-100">
-          <div className="text-xs font-medium text-slate-400 tracking-[1.5px] mb-1">Revenue Recovered</div>
-          <div className="text-xl font-bold text-slate-800 mb-3">
+      <div className="grid grid-cols-2 gap-7">
+        {/* Revenue Recovered */}
+        <div className="glass-card p-7">
+          <div
+            className="text-[10px] uppercase tracking-[2px] font-semibold text-slate-400 mb-1"
+            style={{ fontFamily: "var(--font-outfit)" }}
+          >
+            Revenue Recovered
+          </div>
+          <div
+            className="text-2xl font-bold text-slate-800 mb-3"
+            style={{ fontFamily: "var(--font-outfit)" }}
+          >
             £{perf.revenueRecovered.toLocaleString()}{" "}
             <span className="text-xs text-emerald-500 font-medium">+18% ↑</span>
           </div>
@@ -59,9 +73,18 @@ export default function AnalyticsPage() {
           </ResponsiveContainer>
         </div>
 
-        <div className="bg-white rounded-2xl p-6 shadow-[0_2px_12px_rgba(0,0,0,0.06)] border border-slate-100">
-          <div className="text-xs font-medium text-slate-400 tracking-[1.5px] mb-1">Waste Avoided (packs)</div>
-          <div className="text-xl font-bold text-slate-800 mb-3">
+        {/* Waste Avoided */}
+        <div className="glass-card p-7">
+          <div
+            className="text-[10px] uppercase tracking-[2px] font-semibold text-slate-400 mb-1"
+            style={{ fontFamily: "var(--font-outfit)" }}
+          >
+            Waste Avoided (packs)
+          </div>
+          <div
+            className="text-2xl font-bold text-slate-800 mb-3"
+            style={{ fontFamily: "var(--font-outfit)" }}
+          >
             47{" "}
             <span className="text-xs text-emerald-500 font-medium">+12% ↑</span>
           </div>
@@ -77,30 +100,57 @@ export default function AnalyticsPage() {
       </div>
 
       {/* Bottom Row: Top Medicines + CO2 */}
-      <div className="grid grid-cols-2 gap-6">
-        <div className="bg-white rounded-2xl p-6 shadow-[0_2px_12px_rgba(0,0,0,0.06)] border border-slate-100">
-          <div className="text-base font-bold text-slate-800 mb-3">Top Traded Medicines</div>
+      <div className="grid grid-cols-2 gap-7">
+        {/* Top Traded Medicines */}
+        <div className="glass-card p-7">
+          <div
+            className="text-[10px] uppercase tracking-[2px] font-semibold text-slate-400 mb-4"
+            style={{ fontFamily: "var(--font-outfit)" }}
+          >
+            Top Traded Medicines
+          </div>
           <div className="flex flex-col gap-4">
             {perf.topMedicines.map((m) => (
               <div key={m.medicineId} className="flex justify-between items-center text-sm">
-                <span className="text-slate-600">{m.name}</span>
+                <span
+                  className="text-slate-600"
+                  style={{ fontFamily: "var(--font-outfit)" }}
+                >
+                  {m.name}
+                </span>
                 <div className="flex items-center gap-2">
-                  <div className="w-20 h-1.5 bg-emerald-100 rounded-full overflow-hidden">
+                  <div className="w-20 h-2 bg-emerald-100 rounded-full overflow-hidden">
                     <div
-                      className="h-full bg-emerald-400 rounded-full"
+                      className="h-full bg-gradient-to-r from-emerald-400 to-teal-500 rounded-full"
                       style={{ width: `${(m.count / perf.topMedicines[0].count) * 100}%` }}
                     />
                   </div>
-                  <span className="text-[11px] text-slate-400 w-7 text-right">{m.count}</span>
+                  <span
+                    className="text-[10px] uppercase tracking-[2px] font-semibold text-slate-400 w-7 text-right"
+                    style={{ fontFamily: "var(--font-outfit)" }}
+                  >
+                    {m.count}
+                  </span>
                 </div>
               </div>
             ))}
           </div>
         </div>
 
-        <div className="bg-white rounded-2xl p-6 shadow-[0_2px_12px_rgba(0,0,0,0.06)] border border-slate-100">
-          <div className="text-xs font-medium text-slate-400 tracking-[1.5px] mb-1">CO₂ Avoided This Month</div>
-          <div className="text-xl font-bold text-emerald-600 mb-3">142 kg</div>
+        {/* CO₂ Avoided */}
+        <div className="glass-card p-7">
+          <div
+            className="text-[10px] uppercase tracking-[2px] font-semibold text-slate-400 mb-1"
+            style={{ fontFamily: "var(--font-outfit)" }}
+          >
+            CO₂ Avoided This Month
+          </div>
+          <div
+            className="text-2xl font-bold text-emerald-600 mb-3"
+            style={{ fontFamily: "var(--font-outfit)" }}
+          >
+            142 kg
+          </div>
           <ResponsiveContainer width="100%" height={80}>
             <LineChart data={perf.co2Avoided}>
               <defs>

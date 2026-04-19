@@ -66,18 +66,18 @@ export default function SearchPage() {
   return (
     <div>
       {/* Search Bar */}
-      <div className="bg-white rounded-xl px-5 py-4 mb-5 flex gap-3 items-center shadow-[0_2px_12px_rgba(0,0,0,0.06)] border border-slate-100">
+      <div className="glass-card-static px-6 py-5 mb-5 flex gap-3 items-center">
         <input
           type="text"
           placeholder='Search medicines... e.g. "Metformin 500mg"'
-          className="flex-1 bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm text-slate-800 placeholder:text-slate-400 outline-none focus:border-emerald-400"
+          className="flex-1 bg-slate-50/80 border border-slate-200 rounded-xl px-4 py-2.5 text-sm text-slate-800 placeholder:text-slate-400 outline-none focus:border-emerald-400"
         />
-        <select className="bg-slate-50 border border-slate-200 rounded-md px-3 py-2 text-xs text-slate-600">
+        <select className="bg-slate-50/80 border border-slate-200 rounded-xl px-4 py-2.5 text-xs text-slate-600 outline-none focus:border-emerald-400">
           <option>Within: 5 miles</option>
           <option>Within: 2 miles</option>
           <option>Within: 10 miles</option>
         </select>
-        <select className="bg-slate-50 border border-slate-200 rounded-md px-3 py-2 text-xs text-slate-600">
+        <select className="bg-slate-50/80 border border-slate-200 rounded-xl px-4 py-2.5 text-xs text-slate-600 outline-none focus:border-emerald-400">
           <option>Sort: Distance</option>
           <option>Sort: Price</option>
           <option>Sort: Expiry</option>
@@ -85,9 +85,9 @@ export default function SearchPage() {
       </div>
 
       {/* Split: Map + Results */}
-      <div className="grid grid-cols-2 gap-5" style={{ height: "calc(100vh - 200px)" }}>
+      <div className="grid grid-cols-2 gap-6" style={{ height: "calc(100vh - 200px)" }}>
         {/* Map */}
-        <div className="rounded-xl overflow-hidden">
+        <div className="glass-card-static overflow-hidden rounded-2xl">
           <PharmacyMap
             markers={markers}
             onMarkerClick={(id) => setHighlightPharmacy(id)}
@@ -96,11 +96,11 @@ export default function SearchPage() {
 
         {/* Results */}
         <div className="overflow-y-auto pr-1">
-          <div className="text-xs text-slate-400 mb-4">
+          <div className="text-[13px] text-slate-400 mb-4" style={{ fontFamily: "var(--font-outfit)" }}>
             Showing <strong className="text-slate-600">{availableListings.length} listings</strong> from nearby pharmacies
           </div>
 
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col gap-6">
             {availableListings.map(({ listing, pharmacy, medicine, distanceMiles }) => {
               const savingsPercent = Math.round(((medicine.wholesalePrice - listing.pricePerPack) / medicine.wholesalePrice) * 100);
               const isHighlighted = highlightPharmacy === pharmacy.id;
@@ -108,13 +108,20 @@ export default function SearchPage() {
               return (
                 <div
                   key={listing.id}
-                  className={`bg-white border rounded-xl p-5 transition-colors ${
-                    isHighlighted ? "border-emerald-400 shadow-md" : "border-slate-100 shadow-[0_2px_12px_rgba(0,0,0,0.06)]"
+                  className={`glass-card-static p-6 hover:shadow-[0_8px_32px_rgba(0,0,0,0.08)] transition-all duration-200 ${
+                    isHighlighted
+                      ? "ring-2 ring-emerald-400 shadow-[0_8px_32px_rgba(52,211,153,0.12)]"
+                      : ""
                   }`}
                 >
-                  <div className="flex justify-between items-start mb-3">
+                  <div className="flex justify-between items-start mb-4">
                     <div>
-                      <div className="font-semibold text-sm text-slate-800">{pharmacy.name}</div>
+                      <div
+                        className="text-[15px] font-bold text-slate-800"
+                        style={{ fontFamily: "var(--font-outfit)" }}
+                      >
+                        {pharmacy.name}
+                      </div>
                       <div className="text-[11px] text-slate-400 mt-0.5">
                         {pharmacy.postcode} · {distanceMiles.toFixed(1)} miles
                       </div>
@@ -127,7 +134,7 @@ export default function SearchPage() {
 
                   <div className="flex justify-between items-center">
                     <div>
-                      <div className="text-sm font-medium text-slate-700">
+                      <div className="text-sm font-semibold text-slate-700">
                         {formatMedicineName(medicine)} · {listing.quantity} packs
                       </div>
                       <div className="flex gap-1.5 mt-1.5">
@@ -138,14 +145,14 @@ export default function SearchPage() {
                       </div>
                     </div>
                     <div className="text-right">
-                      <div className="text-base font-bold text-emerald-600">£{listing.pricePerPack.toFixed(2)}</div>
+                      <div className="text-lg font-bold text-emerald-600">£{listing.pricePerPack.toFixed(2)}</div>
                       <div className="text-[10px] text-emerald-500">{savingsPercent}% below wholesale</div>
                     </div>
                   </div>
 
                   <button
                     onClick={() => setSelectedListing(listing.id)}
-                    className="w-full mt-3.5 bg-emerald-500 hover:bg-emerald-600 text-white py-2.5 rounded-xl text-xs font-semibold transition-colors shadow-sm"
+                    className="w-full mt-4 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white py-2.5 rounded-xl text-xs font-semibold transition-all duration-200 shadow-[0_4px_16px_rgba(52,211,153,0.3)]"
                   >
                     Request
                   </button>

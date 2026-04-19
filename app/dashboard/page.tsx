@@ -11,14 +11,20 @@ const perf = networkStats.pharmacyPerformance;
 
 export default function DashboardPage() {
   return (
-    <div className="space-y-6">
+    <div className="space-y-7">
       {/* Alert Banner */}
-      <div className="bg-emerald-50 border border-emerald-200 rounded-xl px-5 py-4 flex items-center gap-4">
-        <div className="w-8 h-8 bg-emerald-500 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">
-          3
+      <div className="glass-card-static px-7 py-5 flex items-center gap-4">
+        <div className="flex-shrink-0 px-3 py-1 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 shadow-[0_4px_16px_rgba(52,211,153,0.3)] ring-1 ring-emerald-400/40">
+          <span
+            className="text-white text-xs font-extrabold"
+            style={{ fontFamily: "var(--font-outfit)" }}
+          >
+            3
+          </span>
         </div>
-        <span className="text-sm text-emerald-800">
-          <strong>3 items on your watch list are available nearby</strong> — Metformin 500mg highlighted
+        <span className="text-sm text-emerald-900/80">
+          <strong className="text-emerald-900">3 items on your watch list are available nearby</strong>{" "}
+          — Metformin 500mg highlighted
         </span>
       </div>
 
@@ -30,27 +36,46 @@ export default function DashboardPage() {
           { label: "Revenue Recovered", value: `£${perf.revenueRecovered.toLocaleString()}`, color: "text-emerald-600" },
           { label: "Expiring Soon", value: perf.expiringSoon, color: "text-red-500" },
         ].map((stat) => (
-          <div key={stat.label} className="bg-white rounded-xl p-5 shadow-[0_2px_12px_rgba(0,0,0,0.06)] border border-slate-100">
-            <div className="text-[10px] text-slate-400 uppercase tracking-[1.5px] font-medium mb-2">{stat.label}</div>
-            <div className={`text-2xl font-extrabold ${stat.color ?? "text-slate-800"}`}>{stat.value}</div>
+          <div key={stat.label} className="glass-card p-7">
+            <div
+              className="text-[10px] uppercase tracking-[2px] font-semibold text-slate-400 mb-3"
+              style={{ fontFamily: "var(--font-outfit)" }}
+            >
+              {stat.label}
+            </div>
+            <div
+              className={`text-2xl font-extrabold ${stat.color ?? "text-slate-800"}`}
+              style={{ fontFamily: "var(--font-outfit)" }}
+            >
+              {stat.value}
+            </div>
           </div>
         ))}
       </div>
 
       {/* Listings Table */}
-      <div className="bg-white rounded-xl shadow-[0_2px_12px_rgba(0,0,0,0.06)] border border-slate-100 overflow-hidden">
-        <div className="px-6 py-5 border-b border-slate-100 flex justify-between items-center">
-          <span className="font-bold text-base text-slate-800">Your Surplus Listings</span>
+      <div className="glass-card-static overflow-hidden">
+        {/* Table Title Row */}
+        <div className="px-7 py-5 border-b border-white/20 flex justify-between items-center">
+          <h2
+            className="font-bold text-base text-slate-800"
+            style={{ fontFamily: "var(--font-outfit)" }}
+          >
+            Your Surplus Listings
+          </h2>
           <Link
             href="/list-surplus"
-            className="bg-emerald-500 hover:bg-emerald-600 text-white px-5 py-2 rounded-lg text-sm font-semibold transition-colors shadow-sm"
+            className="bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white px-5 py-2 rounded-xl text-sm font-semibold transition-all shadow-[0_4px_16px_rgba(52,211,153,0.3)]"
           >
             + List Surplus
           </Link>
         </div>
 
         {/* Table Header */}
-        <div className="grid grid-cols-[2fr_1fr_1fr_1fr_1fr] px-6 py-3 bg-slate-50/80 text-[10px] uppercase tracking-[1.5px] text-slate-400 font-semibold border-b border-slate-100">
+        <div
+          className="grid grid-cols-[2fr_1fr_1fr_1fr_1fr] px-7 py-5 bg-white/30 text-[10px] uppercase tracking-[2px] text-slate-400 font-semibold border-b border-white/20"
+          style={{ fontFamily: "var(--font-outfit)" }}
+        >
           <div>Medicine</div>
           <div>Qty</div>
           <div>Expiry</div>
@@ -69,10 +94,15 @@ export default function DashboardPage() {
           return (
             <div
               key={listing.id}
-              className="grid grid-cols-[2fr_1fr_1fr_1fr_1fr] px-6 py-4 border-b border-slate-50 items-center text-sm hover:bg-slate-50/50 transition-colors"
+              className="grid grid-cols-[2fr_1fr_1fr_1fr_1fr] px-7 py-5 border-b border-white/10 items-center text-sm hover:bg-white/20 transition-colors"
             >
               <div>
-                <div className="font-semibold text-slate-800">{formatMedicineName(med)}</div>
+                <div
+                  className="font-semibold text-slate-800"
+                  style={{ fontFamily: "var(--font-outfit)" }}
+                >
+                  {formatMedicineName(med)}
+                </div>
                 <div className="text-[11px] text-slate-400 mt-0.5">
                   {med.packSize} {med.form} · {med.manufacturer}
                 </div>

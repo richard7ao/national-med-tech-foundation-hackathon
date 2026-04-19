@@ -6,24 +6,38 @@ export default function LandingPage() {
   return (
     <div className="-m-8">
       {/* Hero */}
-      <div
-        className="px-16 py-24 text-center flex flex-col items-center"
-        style={{ background: "linear-gradient(135deg, #d1fae5, #a7f3d0, #99f6e4)" }}
-      >
-        <div className="text-[11px] uppercase tracking-[3px] text-emerald-700/50 mb-3 font-medium">
-          The Problem
+      <div className="relative overflow-hidden px-16 py-28 text-center flex flex-col items-center">
+        <div
+          className="absolute inset-0"
+          style={{ background: "linear-gradient(135deg, #d1fae5 0%, #a7f3d0 40%, #99f6e4 70%, #ccfbf1 100%)" }}
+        />
+        <div className="absolute inset-0 opacity-[0.04]" style={{
+          backgroundImage: "radial-gradient(circle at 1px 1px, #064e3b 1px, transparent 0)",
+          backgroundSize: "32px 32px"
+        }} />
+
+        <div className="relative z-10">
+          <div
+            className="inline-block text-[11px] uppercase tracking-[4px] text-emerald-700/60 mb-4 font-semibold"
+            style={{ fontFamily: "var(--font-outfit)" }}
+          >
+            The Problem
+          </div>
+          <h1
+            className="text-5xl font-extrabold text-emerald-900 mb-5 tracking-tight leading-tight"
+            style={{ fontFamily: "var(--font-outfit)" }}
+          >
+            Stop Burning<br />Good Medicine
+          </h1>
+          <p className="text-base text-emerald-800/50 max-w-lg mx-auto leading-relaxed">
+            One pharmacy incinerates stock while another turns patients away.
+            What if they could just... share?
+          </p>
         </div>
-        <h1 className="text-4xl font-extrabold text-emerald-900 mb-4 tracking-tight">
-          Stop Burning Good Medicine
-        </h1>
-        <p className="text-base text-emerald-800/60 max-w-xl mx-auto leading-relaxed">
-          One pharmacy incinerates stock while another turns patients away.
-          What if they could just... share?
-        </p>
       </div>
 
       {/* Stat Cards */}
-      <div className="max-w-4xl mx-auto -mt-10 relative z-10 px-8">
+      <div className="max-w-4xl mx-auto -mt-12 relative z-10 px-8">
         <div className="grid grid-cols-3 gap-6">
           <StatCard
             label="Medicines Destroyed / Year"
@@ -54,8 +68,8 @@ export default function LandingPage() {
 
       {/* Transition */}
       <div
-        className="text-center py-16 text-slate-400 italic text-base animate-fade-in-up"
-        style={{ animationDelay: "800ms" }}
+        className="text-center py-20 text-slate-400 italic text-lg animate-fade-in-up"
+        style={{ animationDelay: "800ms", fontFamily: "var(--font-outfit)" }}
       >
         &ldquo;What if they could just... share?&rdquo;
       </div>

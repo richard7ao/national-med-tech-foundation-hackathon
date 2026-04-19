@@ -18,7 +18,7 @@ export default function Sidebar({ pathname }: SidebarProps) {
   return (
     <aside className="app-sidebar">
       <Link href="/" className="sidebar-logo">
-        <div className="flex items-center justify-center w-7 h-7 rounded-lg bg-emerald-400 text-white font-extrabold text-xs">
+        <div className="flex items-center justify-center w-8 h-8 rounded-xl bg-gradient-to-br from-emerald-400 to-teal-500 text-white font-extrabold text-xs shadow-[0_2px_8px_rgba(52,211,153,0.4)]">
           PB
         </div>
         <span>PharmaBridge</span>
@@ -42,6 +42,18 @@ export default function Sidebar({ pathname }: SidebarProps) {
           );
         })}
       </nav>
+
+      <div className="px-5 py-4 border-t border-white/[0.06]">
+        <div className="flex items-center gap-3">
+          <div className="w-8 h-8 rounded-full bg-gradient-to-br from-emerald-400 to-emerald-600 flex items-center justify-center text-white text-xs font-bold">
+            SC
+          </div>
+          <div>
+            <div className="text-[13px] font-semibold text-slate-200">Sarah Chen</div>
+            <div className="text-[11px] text-slate-500">Pharmacist</div>
+          </div>
+        </div>
+      </div>
     </aside>
   );
 }

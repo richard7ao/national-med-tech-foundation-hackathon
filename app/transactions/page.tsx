@@ -13,13 +13,19 @@ export default function TransactionsPage() {
   const selected = myTransactions.find((t) => t.id === selectedId);
 
   return (
-    <div className="grid gap-6" style={{ gridTemplateColumns: "300px 1fr", height: "calc(100vh - 120px)" }}>
+    <div
+      className="grid gap-7"
+      style={{ gridTemplateColumns: "320px 1fr", height: "calc(100vh - 120px)" }}
+    >
       {/* Left: Transaction List */}
       <div className="overflow-y-auto">
-        <div className="text-xs text-slate-400 font-semibold uppercase tracking-wide mb-4">
+        <div
+          className="text-[10px] uppercase tracking-[2px] font-semibold text-slate-400 mb-4"
+          style={{ fontFamily: "var(--font-outfit)" }}
+        >
           Recent Transactions
         </div>
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-3">
           {myTransactions.map((txn) => {
             const med = getMedicineById(txn.medicineId);
             const isSeller = txn.sellerPharmacyId === CURRENT_PHARMACY_ID;
@@ -31,13 +37,16 @@ export default function TransactionsPage() {
               <button
                 key={txn.id}
                 onClick={() => setSelectedId(txn.id)}
-                className={`text-left rounded-xl p-5 transition-colors ${
+                className={`text-left rounded-xl p-5 transition-all ${
                   isActive
-                    ? "bg-emerald-500 text-white shadow-md"
-                    : "bg-white border border-slate-100 shadow-[0_2px_12px_rgba(0,0,0,0.06)] hover:border-emerald-300"
+                    ? "bg-gradient-to-r from-emerald-500 to-teal-500 text-white shadow-[0_4px_16px_rgba(52,211,153,0.3)]"
+                    : "glass-card border border-white/50 hover:border-emerald-300"
                 }`}
               >
-                <div className={`font-semibold text-sm ${isActive ? "" : "text-slate-800"}`}>
+                <div
+                  className={`font-semibold text-sm ${isActive ? "" : "text-slate-800"}`}
+                  style={{ fontFamily: "var(--font-outfit)" }}
+                >
                   {med ? formatMedicineName(med) : "Unknown"}
                 </div>
                 <div className={`text-[11px] mt-1 ${isActive ? "opacity-80" : "text-slate-400"}`}>
@@ -59,26 +68,35 @@ export default function TransactionsPage() {
 
       {/* Right: Audit Trail */}
       {selected && (
-        <div className="bg-white rounded-2xl p-7 shadow-[0_2px_12px_rgba(0,0,0,0.06)] border border-slate-100 overflow-y-auto">
+        <div className="glass-card-static p-8 overflow-y-auto">
           <div className="flex justify-between items-start mb-6">
             <div>
-              <h2 className="text-lg font-bold text-slate-800">
+              <h2
+                className="text-xl font-bold text-slate-800"
+                style={{ fontFamily: "var(--font-outfit)" }}
+              >
                 {getMedicineById(selected.medicineId)
                   ? formatMedicineName(getMedicineById(selected.medicineId)!)
                   : "Unknown"}
               </h2>
-              <div className="text-sm text-slate-500">
+              <div
+                className="text-[10px] uppercase tracking-[2px] font-semibold text-slate-400 mt-1"
+                style={{ fontFamily: "var(--font-outfit)" }}
+              >
                 Batch #{selected.auditTrail[0]?.description.match(/#(\w+)/)?.[1] ?? "N/A"} · {selected.quantity} packs
               </div>
             </div>
-            <button className="bg-slate-50 border border-slate-200 rounded-md px-3 py-1.5 text-xs text-slate-500 font-medium hover:bg-slate-100">
+            <button className="bg-slate-50 border border-slate-200 rounded-xl px-4 py-2 text-xs text-slate-500 font-medium hover:bg-slate-100 transition-colors">
               Download PDF ↓
             </button>
           </div>
 
           <Timeline events={selected.auditTrail} />
 
-          <div className="mt-5 pt-4 border-t border-slate-200 text-[11px] text-slate-400">
+          <div
+            className="text-[11px] text-slate-400 mt-6 pt-5 border-t border-slate-200"
+            style={{ fontFamily: "var(--font-outfit)" }}
+          >
             This record is immutable and available to GPhC/MHRA inspectors on request.
           </div>
         </div>

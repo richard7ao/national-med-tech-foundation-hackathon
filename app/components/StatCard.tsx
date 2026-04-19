@@ -4,11 +4,11 @@ import AnimatedCounter from "./AnimatedCounter";
 
 type AccentColor = "red" | "amber" | "teal" | "green";
 
-const accentStyles: Record<AccentColor, { border: string; text: string }> = {
-  red: { border: "border-l-red-500", text: "text-red-500" },
-  amber: { border: "border-l-amber-500", text: "text-amber-600" },
-  teal: { border: "border-l-teal-500", text: "text-teal-600" },
-  green: { border: "border-l-emerald-400", text: "text-emerald-600" },
+const accentStyles: Record<AccentColor, { gradient: string; text: string; glow: string }> = {
+  red: { gradient: "from-red-500 to-rose-500", text: "text-red-500", glow: "shadow-[0_4px_20px_rgba(239,68,68,0.15)]" },
+  amber: { gradient: "from-amber-500 to-orange-500", text: "text-amber-600", glow: "shadow-[0_4px_20px_rgba(245,158,11,0.15)]" },
+  teal: { gradient: "from-teal-500 to-cyan-500", text: "text-teal-600", glow: "shadow-[0_4px_20px_rgba(20,184,166,0.15)]" },
+  green: { gradient: "from-emerald-400 to-emerald-600", text: "text-emerald-600", glow: "shadow-[0_4px_20px_rgba(52,211,153,0.15)]" },
 };
 
 interface StatCardProps {
@@ -34,17 +34,18 @@ export default function StatCard({
 
   return (
     <div
-      className={`bg-white rounded-2xl p-7 shadow-[0_2px_12px_rgba(0,0,0,0.06)] border border-slate-100 border-l-4 ${styles.border} animate-fade-in-up`}
+      className={`glass-card p-7 animate-fade-in-up ${styles.glow}`}
       style={{ animationDelay: `${delay}ms` }}
     >
-      <div className="text-[10px] uppercase tracking-[1.5px] text-slate-400 mb-3 font-medium">
+      <div className={`w-10 h-1 rounded-full bg-gradient-to-r ${styles.gradient} mb-5`} />
+      <div className="text-[10px] uppercase tracking-[2px] text-slate-400 mb-3 font-semibold" style={{ fontFamily: "var(--font-outfit)" }}>
         {label}
       </div>
-      <div className={`text-3xl font-extrabold ${styles.text} mb-1`}>
+      <div className={`text-3xl font-extrabold ${styles.text} mb-1`} style={{ fontFamily: "var(--font-outfit)" }}>
         <AnimatedCounter target={value} prefix={prefix} suffix={suffix} />
       </div>
       {subtitle && (
-        <div className="text-[13px] text-slate-400 mt-2">{subtitle}</div>
+        <div className="text-[13px] text-slate-400 mt-2 leading-relaxed">{subtitle}</div>
       )}
     </div>
   );
