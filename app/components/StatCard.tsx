@@ -38,10 +38,10 @@ export default function StatCard({
       style={{ animationDelay: `${delay}ms` }}
     >
       <div className={`w-10 h-1 rounded-full bg-gradient-to-r ${styles.gradient} mb-5`} />
-      <div className="text-[10px] uppercase tracking-[2px] text-slate-400 mb-3 font-semibold" style={{ fontFamily: "var(--font-outfit)" }}>
+      <div className="text-[10px] uppercase tracking-[1px] text-slate-400 mb-3 font-semibold" style={{ fontFamily: "var(--font-outfit)" }}>
         {label}
       </div>
-      <div className={`text-3xl font-extrabold ${styles.text} mb-1`} style={{ fontFamily: "var(--font-outfit)" }}>
+      <div className={`text-2xl font-extrabold ${styles.text} mb-1`} style={{ fontFamily: "var(--font-outfit)" }}>
         <AnimatedCounter target={value} prefix={prefix} suffix={suffix} />
       </div>
       {subtitle && (
