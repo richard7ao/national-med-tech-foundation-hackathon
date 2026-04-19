@@ -34,7 +34,7 @@ export default function StatCard({
 
   return (
     <div
-      className={`glass-card p-7 animate-fade-in-up ${styles.glow}`}
+      className={`glass-card p-8 animate-fade-in-up ${styles.glow}`}
       style={{ animationDelay: `${delay}ms` }}
     >
       <div className={`w-10 h-1 rounded-full bg-gradient-to-r ${styles.gradient} mb-5`} />

@@ -37,7 +37,7 @@ export default function LandingPage() {
       </div>
 
       {/* Stat Cards */}
-      <div className="max-w-4xl mx-auto -mt-12 relative z-10 px-8">
+      <div className="max-w-5xl mx-auto -mt-12 relative z-10 px-8">
         <div className="grid grid-cols-3 gap-6">
           <StatCard
             label="Medicines Destroyed / Year"
