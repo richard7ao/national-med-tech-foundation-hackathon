@@ -87,7 +87,7 @@ export default function SearchPage() {
       {/* Split: Map + Results */}
       <div className="grid grid-cols-2 gap-6" style={{ height: "calc(100vh - 200px)" }}>
         {/* Map */}
-        <div className="glass-card-static overflow-hidden rounded-2xl">
+        <div className="glass-card-static overflow-hidden rounded-2xl relative z-0">
           <PharmacyMap
             markers={markers}
             onMarkerClick={(id) => setHighlightPharmacy(id)}
