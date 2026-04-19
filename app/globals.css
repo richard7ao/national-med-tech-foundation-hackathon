@@ -157,15 +157,16 @@ h1, h2, h3, h4, h5, h6 {
 .app-content {
   flex: 1;
   overflow-y: auto;
-  padding: 32px;
+  padding: 40px;
 }
 
 /* ─── Card System ─── */
 .glass-card {
   background: #ffffff;
-  border: 1px solid #cbd5e1;
+  border: 2px solid #cbd5e1;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
   border-radius: 16px;
+  padding: 28px;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
@@ -178,9 +179,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .glass-card-static {
   background: #ffffff;
-  border: 1px solid #cbd5e1;
+  border: 2px solid #cbd5e1;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
   border-radius: 16px;
+  padding: 28px;
 }
 
 /* ─── Custom Scrollbar ─── */
