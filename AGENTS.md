@@ -23,15 +23,17 @@ The solution we propose may reference databases, APIs, S3 buckets, observability
 - All data comes from **local mock data files** — never from real databases or external APIs
 - Never install database drivers, ORMs, cloud SDKs, or observability agents
 - Never use `fetch()` to call real external services
-- Mock data should live alongside the feature that uses it (e.g., `app/tab-1/data.ts`)
+- Mock data lives in `app/data/` — shared across all pages for consistency
 - When the UI references an external system (e.g., "Last synced from S3 at 14:32"), use hardcoded/mock timestamps and values — sell the illusion
 - API routes (`app/api/...`) may be used as **lightweight mock endpoints** if needed, but must only return static/mock data
 
 ### App Structure
 
-- The app uses a dashboard layout with a sidebar and 5 tab pages (`tab-1` through `tab-5`)
+- The app uses a dashboard layout with a sidebar and 7 pages
+- Landing page at `/` (problem statement + stats)
+- 6 feature pages: `/dashboard`, `/list-surplus`, `/search`, `/transactions`, `/analytics`, `/impact`
 - Shared UI components go in `app/components/`
-- Each tab page is a route under `app/tab-{n}/`
+- Mock data layer in `app/data/` — all pages import from the same data source for consistency
 
 ### Speed Over Perfection
 
