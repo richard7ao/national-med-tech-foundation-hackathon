@@ -48,7 +48,7 @@ export default function DashboardPage() {
       </div>
 
       {/* Listings Table */}
-      <div className="bg-white rounded-2xl border-2 border-slate-300 shadow-[0_4px_16px_rgba(0,0,0,0.08)]">
+      <div className="bg-white rounded-2xl border-2 border-slate-300 shadow-[0_4px_16px_rgba(0,0,0,0.08)] overflow-hidden">
         <div className="px-8 py-6 border-b border-slate-200 flex justify-between items-center">
           <h2
             className="font-bold text-lg text-slate-800"
@@ -89,14 +89,14 @@ export default function DashboardPage() {
               key={listing.id}
               className="grid grid-cols-[2fr_1fr_1fr_1fr_1.5fr] px-8 py-5 border-b border-slate-100 items-center text-sm hover:bg-slate-50/60 transition-colors"
             >
-              <div>
+              <div className="min-w-0">
                 <div
-                  className="font-semibold text-slate-800"
+                  className="font-semibold text-slate-800 truncate"
                   style={{ fontFamily: "var(--font-outfit)" }}
                 >
                   {formatMedicineName(med)}
                 </div>
-                <div className="text-[11px] text-slate-400 mt-0.5">
+                <div className="text-[11px] text-slate-400 mt-0.5 truncate">
                   {med.packSize} {med.form} · {med.manufacturer}
                 </div>
               </div>
