@@ -7,7 +7,7 @@ export default function LandingPage() {
     <div className="-m-8">
       {/* Hero */}
       <div
-        className="px-16 py-20 text-center"
+        className="px-16 py-24 text-center flex flex-col items-center"
         style={{ background: "linear-gradient(135deg, #d1fae5, #a7f3d0, #99f6e4)" }}
       >
         <div className="text-[11px] uppercase tracking-[3px] text-emerald-700/50 mb-3 font-medium">
@@ -23,31 +23,33 @@ export default function LandingPage() {
       </div>
 
       {/* Stat Cards */}
-      <div className="grid grid-cols-3 gap-6 px-16 -mt-8 relative z-10">
-        <StatCard
-          label="Medicines Destroyed / Year"
-          value={110}
-          prefix="£"
-          suffix="m"
-          subtitle="Perfectly good, unopened, in-date"
-          accent="red"
-          delay={0}
-        />
-        <StatCard
-          label="Pharmacies Closed Since 2022"
-          value={700}
-          suffix="+"
-          subtitle="4 closures per week in 2024"
-          accent="amber"
-          delay={200}
-        />
-        <StatCard
-          label="Shortage Warnings / Week"
-          value={28}
-          subtitle="Patients turned away or delayed"
-          accent="teal"
-          delay={400}
-        />
+      <div className="max-w-4xl mx-auto -mt-10 relative z-10 px-8">
+        <div className="grid grid-cols-3 gap-6">
+          <StatCard
+            label="Medicines Destroyed / Year"
+            value={110}
+            prefix="£"
+            suffix="m"
+            subtitle="Perfectly good, unopened, in-date"
+            accent="red"
+            delay={0}
+          />
+          <StatCard
+            label="Pharmacies Closed Since 2022"
+            value={700}
+            suffix="+"
+            subtitle="4 closures per week in 2024"
+            accent="amber"
+            delay={200}
+          />
+          <StatCard
+            label="Shortage Warnings / Week"
+            value={28}
+            subtitle="Patients turned away or delayed"
+            accent="teal"
+            delay={400}
+          />
+        </div>
       </div>
 
       {/* Transition */}
