@@ -11,8 +11,8 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Octuple",
-  description: "Octuple Dashboard",
+  title: "PharmaBridge",
+  description: "Stop burning good medicine — pharmacy-to-pharmacy surplus matching",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

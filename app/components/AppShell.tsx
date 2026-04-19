@@ -6,11 +6,12 @@ import Topbar from "./Topbar";
 
 const PAGE_TITLES: Record<string, string> = {
   "/": "Home",
-  "/tab-1": "Tab 1",
-  "/tab-2": "Tab 2",
-  "/tab-3": "Tab 3",
-  "/tab-4": "Tab 4",
-  "/tab-5": "Tab 5",
+  "/dashboard": "Dashboard",
+  "/list-surplus": "List Surplus",
+  "/search": "Search Nearby",
+  "/transactions": "Transactions",
+  "/analytics": "Analytics",
+  "/impact": "Network Impact",
 };
 
 interface AppShellProps {
@@ -19,7 +20,7 @@ interface AppShellProps {
 
 export default function AppShell({ children }: AppShellProps) {
   const pathname = usePathname();
-  const title = PAGE_TITLES[pathname] ?? "Page";
+  const title = PAGE_TITLES[pathname] ?? "PharmaBridge";
 
   return (
     <div className="app-shell">
