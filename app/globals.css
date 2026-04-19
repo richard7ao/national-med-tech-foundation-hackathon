@@ -15,10 +15,12 @@
   --shadow-card-lg: 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
 }
 
 body {

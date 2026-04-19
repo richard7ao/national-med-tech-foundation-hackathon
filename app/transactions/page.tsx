@@ -14,8 +14,8 @@ export default function TransactionsPage() {
 
   return (
     <div
-      className="grid gap-7"
-      style={{ gridTemplateColumns: "320px 1fr", height: "calc(100vh - 120px)" }}
+      className="grid gap-10"
+      style={{ gridTemplateColumns: "340px 1fr", height: "calc(100vh - 120px)" }}
     >
       {/* Left: Transaction List */}
       <div className="overflow-y-auto">
@@ -25,7 +25,7 @@ export default function TransactionsPage() {
         >
           Recent Transactions
         </div>
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-4">
           {myTransactions.map((txn) => {
             const med = getMedicineById(txn.medicineId);
             const isSeller = txn.sellerPharmacyId === CURRENT_PHARMACY_ID;
@@ -37,10 +37,10 @@ export default function TransactionsPage() {
               <button
                 key={txn.id}
                 onClick={() => setSelectedId(txn.id)}
-                className={`text-left rounded-xl p-5 transition-all ${
+                className={`text-left rounded-2xl p-7 border-2 transition-all ${
                   isActive
-                    ? "bg-gradient-to-r from-emerald-500 to-teal-500 text-white shadow-[0_4px_16px_rgba(52,211,153,0.3)]"
-                    : "glass-card border border-white/50 hover:border-emerald-300"
+                    ? "bg-gradient-to-r from-emerald-500 to-teal-500 text-white border-emerald-400 shadow-[0_4px_16px_rgba(52,211,153,0.3)]"
+                    : "bg-white border-slate-300 shadow-[0_4px_16px_rgba(0,0,0,0.08)] hover:border-emerald-300"
                 }`}
               >
                 <div
@@ -68,8 +68,8 @@ export default function TransactionsPage() {
 
       {/* Right: Audit Trail */}
       {selected && (
-        <div className="glass-card-static p-8 overflow-y-auto">
-          <div className="flex justify-between items-start mb-6">
+        <div className="glass-card-static p-10 overflow-y-auto">
+          <div className="flex justify-between items-start mb-8">
             <div>
               <h2
                 className="text-xl font-bold text-slate-800"
@@ -94,7 +94,7 @@ export default function TransactionsPage() {
           <Timeline events={selected.auditTrail} />
 
           <div
-            className="text-[11px] text-slate-400 mt-6 pt-5 border-t border-slate-200"
+            className="text-[11px] text-slate-400 mt-8 pt-6 border-t border-slate-200"
             style={{ fontFamily: "var(--font-outfit)" }}
           >
             This record is immutable and available to GPhC/MHRA inspectors on request.
