@@ -244,7 +244,7 @@ export const transactions: Transaction[] = [
       {
         step: 2,
         title: "FMD Serialisation Verified",
-        description: "Serial: 01-06543210-045678-AC verified against EMVS. Antidepressant controlled confirmed.",
+        description: "Serial: 01-06543210-045678-AC verified against EMVS. Antidepressant product confirmed.",
         timestamp: "2026-01-15T09:00:00Z",
         type: "supply-chain",
       },

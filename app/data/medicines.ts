@@ -23,7 +23,7 @@ export const medicines: Medicine[] = [
   { id: "med-bisoprolol", name: "Bisoprolol", strength: "2.5mg", form: "tablets", packSize: 28, manufacturer: "Accord", wholesalePrice: 2.35 },
   { id: "med-doxycycline", name: "Doxycycline", strength: "100mg", form: "capsules", packSize: 8, manufacturer: "Actavis", wholesalePrice: 5.70 },
   { id: "med-naproxen", name: "Naproxen", strength: "250mg", form: "tablets", packSize: 56, manufacturer: "Rosemont", wholesalePrice: 4.85 },
-  { id: "med-codeine", name: "Codeine Phosphate", strength: "30mg", form: "tablets", packSize: 28, manufacturer: "Zentiva", wholesalePrice: 3.95 },
+  { id: "med-cetirizine", name: "Cetirizine", strength: "10mg", form: "tablets", packSize: 30, manufacturer: "UCB Pharma", wholesalePrice: 3.95 },
 ];
 
 export function getMedicineById(id: string): Medicine | undefined {
