@@ -14,16 +14,16 @@ export default function AnalyticsPage() {
   const [period, setPeriod] = useState("30D");
 
   return (
-    <div>
+    <div className="space-y-7">
       {/* Period Selector */}
-      <div className="flex justify-between items-center mb-5">
-        <h2 className="text-base font-bold text-slate-800">Your Performance</h2>
+      <div className="flex justify-between items-center mb-7">
+        <h2 className="text-lg font-bold text-slate-800">Your Performance</h2>
         <div className="flex gap-1 bg-slate-100 rounded-md p-0.5">
           {PERIODS.map((p) => (
             <button
               key={p}
               onClick={() => setPeriod(p)}
-              className={`px-3 py-1 rounded text-xs transition-colors ${
+              className={`px-4 py-1.5 rounded text-xs transition-colors ${
                 p === period
                   ? "bg-white text-slate-800 font-semibold shadow-sm"
                   : "text-slate-400"
@@ -36,9 +36,9 @@ export default function AnalyticsPage() {
       </div>
 
       {/* Top Row: Revenue + Waste */}
-      <div className="grid grid-cols-2 gap-4 mb-4">
-        <div className="bg-white rounded-xl p-5 shadow-[0_1px_2px_rgba(0,0,0,0.05)]">
-          <div className="text-xs text-slate-400 mb-1">Revenue Recovered</div>
+      <div className="grid grid-cols-2 gap-6 mb-6">
+        <div className="bg-white rounded-2xl p-6 shadow-[0_2px_12px_rgba(0,0,0,0.06)] border border-slate-100">
+          <div className="text-xs font-medium text-slate-400 tracking-[1.5px] mb-1">Revenue Recovered</div>
           <div className="text-xl font-bold text-slate-800 mb-3">
             £{perf.revenueRecovered.toLocaleString()}{" "}
             <span className="text-xs text-emerald-500 font-medium">+18% ↑</span>
@@ -59,8 +59,8 @@ export default function AnalyticsPage() {
           </ResponsiveContainer>
         </div>
 
-        <div className="bg-white rounded-xl p-5 shadow-[0_1px_2px_rgba(0,0,0,0.05)]">
-          <div className="text-xs text-slate-400 mb-1">Waste Avoided (packs)</div>
+        <div className="bg-white rounded-2xl p-6 shadow-[0_2px_12px_rgba(0,0,0,0.06)] border border-slate-100">
+          <div className="text-xs font-medium text-slate-400 tracking-[1.5px] mb-1">Waste Avoided (packs)</div>
           <div className="text-xl font-bold text-slate-800 mb-3">
             47{" "}
             <span className="text-xs text-emerald-500 font-medium">+12% ↑</span>
@@ -77,10 +77,10 @@ export default function AnalyticsPage() {
       </div>
 
       {/* Bottom Row: Top Medicines + CO2 */}
-      <div className="grid grid-cols-2 gap-4">
-        <div className="bg-white rounded-xl p-5 shadow-[0_1px_2px_rgba(0,0,0,0.05)]">
-          <div className="text-sm font-semibold text-slate-800 mb-3">Top Traded Medicines</div>
-          <div className="flex flex-col gap-2.5">
+      <div className="grid grid-cols-2 gap-6">
+        <div className="bg-white rounded-2xl p-6 shadow-[0_2px_12px_rgba(0,0,0,0.06)] border border-slate-100">
+          <div className="text-base font-bold text-slate-800 mb-3">Top Traded Medicines</div>
+          <div className="flex flex-col gap-4">
             {perf.topMedicines.map((m) => (
               <div key={m.medicineId} className="flex justify-between items-center text-sm">
                 <span className="text-slate-600">{m.name}</span>
@@ -98,8 +98,8 @@ export default function AnalyticsPage() {
           </div>
         </div>
 
-        <div className="bg-white rounded-xl p-5 shadow-[0_1px_2px_rgba(0,0,0,0.05)]">
-          <div className="text-xs text-slate-400 mb-1">CO₂ Avoided This Month</div>
+        <div className="bg-white rounded-2xl p-6 shadow-[0_2px_12px_rgba(0,0,0,0.06)] border border-slate-100">
+          <div className="text-xs font-medium text-slate-400 tracking-[1.5px] mb-1">CO₂ Avoided This Month</div>
           <div className="text-xl font-bold text-emerald-600 mb-3">142 kg</div>
           <ResponsiveContainer width="100%" height={80}>
             <LineChart data={perf.co2Avoided}>
