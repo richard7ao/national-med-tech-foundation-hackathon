@@ -1,3 +1,88 @@
+"use client";
+
+import { useState } from "react";
+import { getTransactionsForPharmacy } from "../data/transactions";
+import { getMedicineById, formatMedicineName } from "../data/medicines";
+import { getPharmacyById, CURRENT_PHARMACY_ID } from "../data/pharmacies";
+import Timeline from "../components/Timeline";
+
+const myTransactions = getTransactionsForPharmacy(CURRENT_PHARMACY_ID);
+
 export default function TransactionsPage() {
-  return <h1 className="text-xl font-bold text-slate-800">Transactions</h1>;
+  const [selectedId, setSelectedId] = useState(myTransactions[0]?.id ?? "");
+  const selected = myTransactions.find((t) => t.id === selectedId);
+
+  return (
+    <div className="grid gap-5" style={{ gridTemplateColumns: "280px 1fr", height: "calc(100vh - 120px)" }}>
+      {/* Left: Transaction List */}
+      <div className="overflow-y-auto">
+        <div className="text-xs text-slate-400 font-semibold uppercase tracking-wide mb-3">
+          Recent Transactions
+        </div>
+        <div className="flex flex-col gap-1.5">
+          {myTransactions.map((txn) => {
+            const med = getMedicineById(txn.medicineId);
+            const isSeller = txn.sellerPharmacyId === CURRENT_PHARMACY_ID;
+            const counterpartyId = isSeller ? txn.buyerPharmacyId : txn.sellerPharmacyId;
+            const counterparty = getPharmacyById(counterpartyId);
+            const isActive = txn.id === selectedId;
+
+            return (
+              <button
+                key={txn.id}
+                onClick={() => setSelectedId(txn.id)}
+                className={`text-left rounded-lg p-3 transition-colors ${
+                  isActive
+                    ? "bg-emerald-500 text-white"
+                    : "bg-white border border-slate-200 hover:border-emerald-300"
+                }`}
+              >
+                <div className={`font-semibold text-sm ${isActive ? "" : "text-slate-800"}`}>
+                  {med ? formatMedicineName(med) : "Unknown"}
+                </div>
+                <div className={`text-[11px] ${isActive ? "opacity-80" : "text-slate-400"}`}>
+                  {isSeller ? "→" : "←"} {counterparty?.name ?? "Unknown"} · {txn.quantity} packs
+                </div>
+                <div className={`text-[10px] mt-1 ${isActive ? "opacity-60" : "text-slate-300"}`}>
+                  {new Date(txn.createdAt).toLocaleDateString("en-GB", {
+                    day: "numeric",
+                    month: "short",
+                    hour: "2-digit",
+                    minute: "2-digit",
+                  })}
+                </div>
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Right: Audit Trail */}
+      {selected && (
+        <div className="bg-white rounded-xl p-6 shadow-[0_1px_3px_rgba(0,0,0,0.08)] overflow-y-auto">
+          <div className="flex justify-between items-start mb-5">
+            <div>
+              <h2 className="text-lg font-bold text-slate-800">
+                {getMedicineById(selected.medicineId)
+                  ? formatMedicineName(getMedicineById(selected.medicineId)!)
+                  : "Unknown"}
+              </h2>
+              <div className="text-sm text-slate-500">
+                Batch #{selected.auditTrail[0]?.description.match(/#(\w+)/)?.[1] ?? "N/A"} · {selected.quantity} packs
+              </div>
+            </div>
+            <button className="bg-slate-50 border border-slate-200 rounded-md px-3 py-1.5 text-xs text-slate-500 font-medium hover:bg-slate-100">
+              Download PDF ↓
+            </button>
+          </div>
+
+          <Timeline events={selected.auditTrail} />
+
+          <div className="mt-5 pt-4 border-t border-slate-200 text-[11px] text-slate-400">
+            This record is immutable and available to GPhC/MHRA inspectors on request.
+          </div>
+        </div>
+      )}
+    </div>
+  );
 }
